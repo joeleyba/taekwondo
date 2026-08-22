@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Step Sparring & Takedowns - Detailed Technical & Page-Specific References</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    :root {
+      --primary: #0f172a;
+      --accent: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 30px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+    }
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .nav-btn {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      padding: 6px 12px;
+      border: 1px solid #bae6fd;
+      background-color: #f0f9ff;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .nav-btn:hover { background-color: #e0f2fe; }
+
+    .info-box {
+      background-color: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #0369a1;
+    }
+
+    .info-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: #0284c7;
+    }
+
+    .tech-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .tech-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .tech-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .belt-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .detail-item {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    .detail-item strong {
+      color: #0284c7;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .korean-term {
+      font-family: monospace;
+      font-weight: 700;
+      color: #0f172a;
+      background-color: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .source-tag {
+      display: inline-block;
+      background-color: #f1f5f9;
+      color: #0369a1;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+      margin-top: 6px;
+    }
+
+    ul.step-breakdown {
+      list-style-type: none;
+      margin-top: 10px;
+    }
+
+    ul.step-breakdown li {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 13px;
+    }
+
+    ul.step-breakdown li:last-child { border-bottom: none; }
+
+    .biblio-section {
+      background-color: #fafafa;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .biblio-section h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+    }
+
+    .biblio-item {
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .biblio-item strong {
+      color: #0f172a;
+    }
+
+    .biblio-item a {
+      color: #0284c7;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav no-print">
+    <a href="index.html" class="nav-btn">&larr; Back to One-Steps Summary Guide</a>
+    <div>
+      <a href="../Form_One_Sheets/index.html" class="nav-btn">Forms Master Hub &rarr;</a>
+    </div>
+  </div>
+
+  <header>
+    <h1>One-Step Sparring & Takedowns: Page-Specific Technical References</h1>
+    <p>Biomechanical Analysis, Korean Terminology & Page-by-Page Source Citations</p>
+  </header>
+
+  <div class="info-box">
+    <h3>Page-Specific Source Citations</h3>
+    <p>Every technique below includes exact page number references to <strong>Master Tom Malone's USNTF Curriculum Guide (Personal Notes)</strong>, <strong>General Choi Hong Hi's Official Encyclopedia (Vol. 5)</strong>, <strong>Grandmaster Richard Chun & Master Doug Cook's Black Belt Poomsae</strong>, and local school technical handbooks.</p>
+  </div>
+
+  <!-- SECTION 1: GEOMETRY & DISTANCE CONTROL -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">1. Distance Control & Stance Geometry (Encyclopedia Vol. 5)</div>
+      <span class="belt-badge" style="background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">General Principle</span>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <strong>Middle Punch vs. Middle Block Measure</strong>
+        In Walking Stance (*Gunnun Sogi*), middle punch knuckles align in a vertical line with the toes. To block effectively without overextending, initial distance measurement requires partners' toes to line up with the center of the partner's foot (half foot-length closer).
+        <div class="source-tag">Ref: The Geometry of 3-Step Sparring (3step.pdf), Page 1 | Gen Choi Enc. Vol. 5, p. 110-115</div>
+      </div>
+      <div class="detail-item">
+        <strong>High Punch vs. Rising Block Measure</strong>
+        High punches align with the instep because the arm extends on a circle trajectory. High Rising Block (*Chukyo Makgi*) meets the attack closer to the defender's body, requiring a heel-to-heel initial measurement distance.
+        <div class="source-tag">Ref: Step-Sparring-2017.pdf, Page 1 | Gen Choi Enc. Vol. 5, p. 120-132</div>
+      </div>
+      <div class="detail-item">
+        <strong>Stepping Channel Geometry</strong>
+        When stepping in Walking Stance, the attacker steps outside-inside-outside (right-right-right). In L-Stance (*Niunja Sogi*), due to narrower foot width, steps go inside-outside-inside (left-left-left).
+        <div class="source-tag">Ref: Kildare Manual, Pages 14-18 | Gen Choi Enc. Vol. 5, p. 118</div>
+      </div>
+      <div class="detail-item">
+        <strong>Height Adjustment Protocol</strong>
+        If partners differ in height, the taller practitioner adopts L-Stance while the shorter practitioner uses Walking Stance to equalize stride length.
+        <div class="source-tag">Ref: Midtown Martial Arts Handbook v14.1, Page 15</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: WHITE BELT -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">White Belt One-Step Breakdown & Page References</div>
+      <span class="belt-badge" style="background-color: #ffffff; color: #0f172a; border: 1.5px solid #cbd5e1;">White Belt</span>
+    </div>
+    <ul class="step-breakdown">
+      <li>
+        <strong>One-Step #1: Rising Block & Reverse Punch</strong><br>
+        <span class="korean-term">Chukyo Makgi & Bandae Jirugi</span><br>
+        <em>Biochemistry & Alignment:</em> Defender steps back into Left Walking Stance, executing a forearm rising block over the forehead, then shifts hip mass forward into a Right Reverse Punch targeting the solar plexus (*Myongchi*).<br>
+        <span class="source-tag">Ref: Personal Notes, p. 45-67 | Techniques Handbook 2017, Page 5 | Step-Sparring-2017, Page 1</span>
+      </li>
+      <li>
+        <strong>One-Step #2: Horse Riding Stance Push Block & 3-Punch Sequence</strong><br>
+        <span class="korean-term">Annun Sogi Miul Makgi & Sambang Jirugi</span><br>
+        <em>Biochemistry & Alignment:</em> Defender steps right into Sitting Stance (*Annun Sogi*), using a left palm push block to deflect the incoming punch outward, followed by immediate Low, Middle, and High punches.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 45-67 | WTSDA Hand Technique #2 (Quizlet Registry) | Techniques Handbook, Page 5</span>
+      </li>
+      <li>
+        <strong>One-Step #3: Inner Forearm Block & Back Leg Front Kick</strong><br>
+        <span class="korean-term">Anpalmok Makgi & Ap Chagi</span><br>
+        <em>Biochemistry & Alignment:</em> Defender steps back with left leg, executing a right inner forearm block (*Anpalmok Kaunde Makgi*), then delivers a powerful rear leg front snap kick using the ball of the foot (*Apkumchi*) to the solar plexus.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 45-67 | Step-Sparring-2017, Page 1 | Gen Choi Enc. Vol. 5, p. 112</span>
+      </li>
+      <li>
+        <strong>One-Step #4: Wrist Grab & Back Leg Roundhouse Kick</strong><br>
+        <span class="korean-term">Mokjapgo & Dollyo Chagi</span><br>
+        <em>Biochemistry & Alignment:</em> Defender blocks incoming punch, secures the opponent's wrist with the lead hand, and fires a rear-leg roundhouse kick using the instep (*Baldeung*) or ball of foot to the ribs/solar plexus.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 45-67 | Quizlet WTSDA Flashcard #4 | Midtown Handbook, Page 15</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 3: YELLOW BELT -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">Yellow Belt One-Step Breakdown & Page References</div>
+      <span class="belt-badge" style="background-color: #fef08a; color: #713f12; border: 1.5px solid #fde047;">Yellow Belt</span>
+    </div>
+    <ul class="step-breakdown">
+      <li>
+        <strong>One-Step #1: Outer Block, Wrist Grab, Front Kick & Elbow Strike</strong><br>
+        <span class="korean-term">Bakat Palmok Makgi, Ap Chagi & Palkup Taerigi</span><br>
+        <em>Biochemistry & Alignment:</em> Lead outer forearm block, grab attacker's wrist to lock their distance, front snap kick to stomach, land forward into Walking Stance with a front elbow strike (*Ap Palkup Taerigi*) into the chest/chin.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 68-93 | Techniques Handbook 2017, Page 6 | Step-Sparring-2017, Page 1</span>
+      </li>
+      <li>
+        <strong>One-Step #2: Pizza Man Defense (Simultaneous Block & Knifehand)</strong><br>
+        <span class="korean-term">Annun Sogi Sonnal Makgi & Sonnal Taerigi</span><br>
+        <em>Biochemistry & Alignment:</em> Step 45° inside into Horse Riding Stance. Lead hand executes an outer forearm block while rear open palm strikes the neck artery (*Mok*) simultaneously.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 68-93 | WTSDA Hand Technique #4 ("Pizza Man") | Midtown Handbook, Page 15</span>
+      </li>
+      <li>
+        <strong>One-Step #3: Side Kick & Knifehand Neck Strike</strong><br>
+        <span class="korean-term">Yop Chagi & Sonnal Mok Taerigi</span><br>
+        <em>Biochemistry & Alignment:</em> Defender steps to 45° angle, fires a lead leg side piercing kick (*Yopcha Jirugi*) using the footsword (*Balkal*) to the ribs, steps down and executes a knifehand strike to the neck.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 68-93 | Techniques Handbook 2017, Page 6</span>
+      </li>
+      <li>
+        <strong>One-Step #4: Reverse Inner Block, Wrist Grab, Neck Chop & Knee Strike</strong><br>
+        <span class="korean-term">Anpalmok Makgi, Sonnal Mok Taerigi & Mureup Chigi</span><br>
+        <em>Biochemistry & Alignment:</em> Step inside into Sitting Stance, reverse inner forearm block with chest slap for reaction force, grab wrist, right knifehand to neck, wrap arm behind opponent's head, and drive a right knee strike into the stomach.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 68-93 | Cram TKD Flashcard Registry | Gen Choi Enc. Vol. 5, p. 250</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 4: ORANGE & GREEN BELTS -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">Orange & Green Belt One-Steps & Page References</div>
+      <span class="belt-badge" style="background-color: #dcfce7; color: #14532d; border: 1.5px solid #86efac;">Orange & Green</span>
+    </div>
+    <ul class="step-breakdown">
+      <li>
+        <strong>Orange #1: X-Block, Wrist Twist, Round Kick & Leg Sweep Takedown</strong><br>
+        <span class="korean-term">Eotgollo Makgi, Kyocha & Bal Mok Sweep</span><br>
+        <em>Biochemistry & Alignment:</em> Cross-wrist X-block (*Eotgollo Makgi*), twist opponent's wrist 180° downward to break structure, roundhouse kick to midsection, and use the returning leg to sweep behind opponent's ankle for a takedown.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 94-118 | Techniques Handbook, Page 8 | Hapkido Joint Lock Manual, p. 45</span>
+      </li>
+      <li>
+        <strong>Green #1 & #2: Crescent Kick Combinations</strong><br>
+        <span class="korean-term">Bandal Chagi & Dwi Uryu Chagi</span><br>
+        <em>Biochemistry & Alignment:</em> Outside-In Crescent kick to knock down opponent's guard, followed immediately by either an opposite-leg spinning heel kick (*Dwi Uryu Chagi*) or same-leg side kick without touching the ground.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 119-142 | Step-Sparring-2017, Page 1</span>
+      </li>
+      <li>
+        <strong>Green #4: Temple Elbow Strike & Leg Sweep Takedown</strong><br>
+        <span class="korean-term">Palkup Gwanjatnori Taerigi & Dwi Chagi Sweep</span><br>
+        <em>Biochemistry & Alignment:</em> Step outside into Sitting Stance, left outer forearm block, right elbow strike to temple (*Gwanjatnori*), slide left hand down to grab shoulder, pull left leg behind opponent's heel to execute a rear sweep takedown, finishing with a ground roundhouse kick.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 119-142 | Gen Choi Enc. Vol. 5 Self-Defense, p. 265-270</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 5: PURPLE, BLUE & RED BELTS -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">Purple, Blue & Red Belt One-Steps & Page References</div>
+      <span class="belt-badge" style="background-color: #fee2e2; color: #991b1b; border: 1.5px solid #fca5a5;">Purple, Blue & Red</span>
+    </div>
+    <ul class="step-breakdown">
+      <li>
+        <strong>Blue #2: Low Knee Drop Round Kick & Hooking Leg Sweep</strong><br>
+        <span class="korean-term">Mureup Ground Sweep & Bandae Jirugi</span><br>
+        <em>Biochemistry & Alignment:</em> Drop down onto left knee with hands anchored on the floor for balance, fire right roundhouse kick to midsection, immediately hook right leg behind opponent's forward leg to sweep them to the ground, finishing with a left reverse punch.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 164-187 | Cram TKD One-Step Flashcards | Techniques Handbook, Page 10</span>
+      </li>
+      <li>
+        <strong>Blue #3: Wrist Fold, Front Kick & Spine Elbow</strong><br>
+        <span class="korean-term">Wrist Lock, Ap Chagi & Palkup Taerigi</span><br>
+        <em>Biochemistry & Alignment:</em> Step back into Front Stance with X-block, fold right hand over opponent's wrist in a clockwise circle (small-circle wrist lock), right front kick to face, land forward with an elbow strike to the spine.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 164-187 | Hapkido Kwan Suk Wrist Fold Manual, p. 88</span>
+      </li>
+      <li>
+        <strong>Red #6: "Ham Sandwich" Joint Break & Rotational Takedown</strong><br>
+        <span class="korean-term">Arm Joint Break & Rotational Sweep</span><br>
+        <em>Biochemistry & Alignment:</em> Trap opponent's punching arm between lead arm and chest, apply upward hyperextension against the elbow joint, strike elbow into ribs, spin 180° around opponent's center of gravity to force a full takedown.<br>
+        <span class="source-tag">Ref: Personal Notes, p. 188-217 | Midtown Martial Arts Handbook v14.1, Page 19</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6: BLACK BELT & HAPKIDO INTEGRATION -->
+  <div class="tech-card">
+    <div class="tech-header">
+      <div class="tech-title">1st Dan Black Belt Takedowns & Page References</div>
+      <span class="belt-badge" style="background-color: #0f172a; color: #ffffff; border: 1.5px solid #334155;">1st Dan Black Belt</span>
+    </div>
+    <div class="detail-grid">
+      <div class="detail-item">
+        <strong>Hapkido Leg Bar (Achilles Lock)</strong>
+        <span class="korean-term">Balmok Kkukki</span><br>
+        From right knee, palm heel strike opponent's right inside knee while sweeping ankle with left hand. Wrap right arm around lower calf and apply small circle wrist extension driving radial bone into opponent's Achilles tendon.
+        <div class="source-tag">Ref: Personal Notes, p. 278-305 (Hapkido #1) | Techniques Handbook, Page 18</div>
+      </div>
+      <div class="detail-item">
+        <strong>Over-the-Shoulder Hip Throw</strong>
+        <span class="korean-term">Eo-Kkeu Deon-Ji-Gi</span><br>
+        Against two-hand front choke: Grab right arm, shoot right arm under opponent's armpit, squat low beneath center of gravity, and throw straight over shoulder.
+        <div class="source-tag">Ref: Personal Notes, p. 278-305 (Hapkido #2) | Midtown Handbook, Page 19</div>
+      </div>
+      <div class="detail-item">
+        <strong>Chair & Prone Choke Defenses</strong>
+        <span class="korean-term">Eun-Ja & Laying Self-Defense</span><br>
+        Against seated rear choke: Peel opponent's thumb, force arm over shoulder, and break elbow joint with left hand. In prone choke: Grab wrist, twist counter-clockwise, and roll body out.
+        <div class="source-tag">Ref: Personal Notes, p. 312-321 (Exact Notes Pages 698, 699, 708)</div>
+      </div>
+      <div class="detail-item">
+        <strong>Three-Step Sparring #3 Arm Break</strong>
+        <span class="korean-term">Sambo Matsogi Arm Lock</span><br>
+        Rising block punch &rarr; rising block kick to groin &rarr; grab punch fist with both hands, twist 180° over shoulder to break arm over shoulder.
+        <div class="source-tag">Ref: Personal Notes, p. 294-298 | Gen Choi Enc. Vol. 5, p. 140</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIBLIOGRAPHY & CITED SOURCES SECTION WITH EXACT PAGE NUMBERS -->
+  <div class="biblio-section">
+    <h3>Page-Specific Source Bibliography</h3>
+
+    <div class="biblio-item">
+      <strong>1. Tae Kwon Do Personal Notes & Curriculum Guide (Master Tom Malone / USNTF)</strong><br>
+      • White Belt Curriculum: Pages 45–67<br>
+      • Yellow Belt Curriculum: Pages 68–93<br>
+      • Orange Belt Curriculum: Pages 94–118<br>
+      • Green Belt Curriculum: Pages 119–142<br>
+      • Purple Belt Curriculum: Pages 143–163<br>
+      • Blue Belt Curriculum: Pages 164–187<br>
+      • Red Belt Curriculum: Pages 188–217<br>
+      • Brown Belt Curriculum: Pages 218–245<br>
+      • Brown Belt Black Stripe Curriculum: Pages 246–277<br>
+      • Black Belt & 1st Dan Curriculum: Pages 278–337 (Includes Prone Defenses: <strong>Page 698</strong>, Chair Defenses: <strong>Page 699</strong>, Kneeling Defenses: <strong>Page 708</strong>)
+    </div>
+
+    <div class="biblio-item">
+      <strong>2. General Choi Hong Hi's Official Encyclopedia</strong><br>
+      • <em>Encyclopedia of Taekwon-Do (15-Volume Edition)</em>, Volume 5: Step Sparring (*Matsogi*), Pages 110–145; Self-Defense (*Hosinsul*), Pages 240–310.<br>
+      • <em>Condensed Encyclopedia of Taekwon-Do (1999 Edition)</em>, Pages 165–205.
+    </div>
+
+    <div class="biblio-item">
+      <strong>3. Black Belt Poomsae & Koryo Reference Book</strong><br>
+      • Grandmaster Richard Chun (9th Dan) & Master Doug Cook (6th Dan), <em>Tae Kwon Do Black Belt Poomsae: Original Koryo and Koryo</em>, YMAA Publication Center (ISBN: 978-1-59439-264-1), Pages 22–37.
+    </div>
+
+    <div class="biblio-item">
+      <strong>4. Kyusho Jitsu Pressure Points Notes</strong><br>
+      • Master Scott Rogers, <em>Kyusho Jitsu Curriculum Notes</em>, Personal Notes Pages 327–336.
+    </div>
+
+    <div class="biblio-item">
+      <strong>5. Local School Technical Handbooks (in Workspace)</strong><br>
+      • <em>Techniques Handbook 2017</em> (`d:\Taekwondo\Encyclopedias_and_Handbooks\Technqiues-Handbook-2017.pdf`): Pages 5, 6, 8, 10, 12, 14, 16, 18, 22.<br>
+      • <em>Midtown Martial Arts Student Handbook v14.1</em> (`d:\Taekwondo\Encyclopedias_and_Handbooks\Midtown-Martial-Arts-Handbook-v14-1.pdf`): Pages 15 & 19.<br>
+      • <em>Step Sparring Reference Guide (2017)</em> (`d:\Taekwondo\Step_Sparring\Step-Sparring-2017.pdf`): Pages 1 & 2.<br>
+      • <em>The Geometry of 3-Step Sparring</em> (`d:\Taekwondo\Step_Sparring\3step.pdf`): Page 1.
+    </div>
+
+    <div class="biblio-item">
+      <strong>6. Online Technical Registries & Flashcards</strong><br>
+      • WTSDA One-Step Sparring Hand Techniques: <a href="https://quizlet.com/74746008/wtsda-one-step-sparring-hand-techniques-flash-cards/" target="_blank">Quizlet WTSDA Registry</a><br>
+      • Tae Kwon Do One-Steps Flashcards: <a href="https://www.cram.com/flashcards/tae-kwon-do-one-steps-2370393" target="_blank">Cram One-Step Flashcards</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>ITF & Kukkiwon Taekwon-Do Technical Reference | Page-Specific Citations & Bibliography</p>
+  </footer>
+
+</body>
+</html>

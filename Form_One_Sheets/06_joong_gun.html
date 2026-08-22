@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOONG-GUN TUL - One-Sheet Breakdown</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary: #1e293b;
+      --bg-subtle: #f8fafc;
+      --border-color: #e2e8f0;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text-dark);
+      background-color: #ffffff;
+      padding: 20px;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #0284c7;
+      font-weight: 600;
+      padding: 4px 10px;
+      border: 1px solid #bae6fd;
+      background-color: #f0f9ff;
+      border-radius: 4px;
+    }
+
+    .nav-btn:hover {
+      background-color: #e0f2fe;
+    }
+
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .title-area h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+    }
+
+    .title-area .korean {
+      font-size: 18px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-left: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .meta-badges {
+      display: flex;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+    }
+
+    .badge.belt {
+      background-color: #dbeafe; color: #1e3a8a; border: 1.5px solid #93c5fd;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .info-card {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .info-card strong {
+      color: var(--primary);
+    }
+
+    .compass-box {
+      background-color: #fafafa;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .compass-title {
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 10px;
+    }
+
+    .compass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 22px);
+      grid-template-rows: repeat(3, 20px);
+      text-align: center;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .compass-cell.center {
+      background-color: var(--primary);
+      color: white;
+      border-radius: 3px;
+      font-size: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-bottom: 14px;
+    }
+
+    th {
+      background-color: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 5px 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tr.section-header td {
+      font-weight: 800;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 5px 10px;
+    }
+
+    tr.part-heaven td {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border-top: 2px solid #bae6fd;
+    }
+
+    tr.part-earth td {
+      background-color: #fef3c7;
+      color: #b45309;
+      border-top: 2px solid #fde68a;
+    }
+
+    tr.part-three td {
+      background-color: #fce7f3;
+      color: #be185d;
+      border-top: 2px solid #fbcfe8;
+    }
+
+    tr.part-four td {
+      background-color: #dcfce7;
+      color: #15803d;
+      border-top: 2px solid #bbf7d0;
+    }
+
+    tr.part-five td {
+      background-color: #f3e8ff;
+      color: #6b21a8;
+      border-top: 2px solid #e9d5ff;
+    }
+
+    tbody tr:nth-child(even):not(.section-header) {
+      background-color: #f8fafc;
+    }
+
+    .col-num { width: 35px; text-align: center; font-weight: 700; }
+    .col-dir { width: 45px; text-align: center; font-weight: 700; }
+    .col-stance { width: 140px; font-weight: 600; }
+    .col-tech { font-weight: 600; }
+    .col-target { width: 60px; text-align: center; font-weight: 700; }
+
+    .kihap-badge {
+      background-color: #ef4444;
+      color: white;
+      font-size: 9px;
+      font-weight: 800;
+      padding: 2px 5px;
+      border-radius: 3px;
+      margin-left: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .key-points {
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-size: 12px;
+      color: #166534;
+    }
+
+    .key-points ul {
+      margin-left: 18px;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav no-print">
+    <a href="05_yul_gok.html" class="nav-btn">&larr; Prev Form</a>
+    <a href="index.html" class="nav-btn">&uarr; Master Index</a>
+    <a href="07_toi_gye.html" class="nav-btn">Next Form &rarr;</a>
+  </div>
+
+  <header>
+    <div class="title-area">
+      <h1>JOONG-GUN <span class="korean">(중근)</span></h1>
+      <div class="subtitle">32 Movements | Ready Stance: Closed Ready Stance B (Moa Junbi Sogi B)</div>
+    </div>
+    <div class="meta-badges">
+      <span class="badge belt">Blue Belt</span>
+      <span class="badge">Form #6</span>
+    </div>
+  </header>
+
+  <div class="summary-grid">
+    <div class="info-card">
+      <p style="margin-bottom: 4px;"><strong>Pattern Meaning:</strong> Named after patriot An Joong-Gun who assassinated Hiro-Bumi Ito, the Japanese governor-general. The 32 movements represent Mr. An's age when executed in 1910.</p>
+      <p><strong>Return Foot:</strong> Right Foot returns to Ready Stance.</p>
+    </div>
+    <div class="compass-box">
+      <div class="compass-title">Diagram (Capital I)</div>
+      <div class="compass-grid">
+        <div></div><div>D</div><div></div>
+        <div>B</div><div class="center">X</div><div>A</div>
+        <div></div><div>C</div><div></div>
+      </div>
+      <div style="font-size: 9px; color: #64748b; margin-top: 4px;">D=Front | C=Back | A=Right | B=Left</div>
+    </div>
+  </div>
+
+  <div class="key-points">
+    <strong>Key Form Structure & Memory Anchors:</strong>
+    <ul>
+      <li>Starts in Close Ready Stance B (Moa Junbi Sogi B).</li><li>Moves 1-4: Reverse Knifehand High Block -> Front Snap Kick -> Rear Foot Stance Palm Pressing Block.</li><li>Moves 24-26: High Crescent Punch -> U-Shape Blocks to E & F.</li>
+    </ul>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="col-num">#</th>
+        <th class="col-dir">Dir</th>
+        <th>Footwork & Turn</th>
+        <th class="col-stance">Stance (Sogi)</th>
+        <th class="col-tech">Technique (Makgi / Jirugi / Taerigi)</th>
+        <th class="col-target">Target</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr class="section-header part-heaven">
+        <td colspan="6">Part 1 (Moves 1 - 4) - Reverse Knifehand & Rear Foot Stance Palm Block</td>
+      </tr>
+      <tr>
+        <td class="col-num">1</td>
+        <td class="col-dir">B</td>
+        <td>Move L foot to B</td>
+        <td class="col-stance">Right L-Stance</td>
+        <td class="col-tech">High Reverse Knifehand Side Block (L)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">2</td>
+        <td class="col-dir">B</td>
+        <td>Kick & Snap Foot Back</td>
+        <td class="col-stance">Left Rear Foot Stance</td>
+        <td class="col-tech">High Front Snap Kick (L) & Palm Upward Pressing Block (R)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">3</td>
+        <td class="col-dir">A</td>
+        <td>Move R foot to A (Turn Clockwise)</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">High Reverse Knifehand Side Block (R)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">4</td>
+        <td class="col-dir">A</td>
+        <td>Kick & Snap Foot Back</td>
+        <td class="col-stance">Right Rear Foot Stance</td>
+        <td class="col-tech">High Front Snap Kick (R) & Palm Upward Pressing Block (L)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr class="section-header part-earth">
+        <td colspan="6">Part 2 (Moves 5 - 10) - Double Knifehand & Reverse Front Elbow Strike</td>
+      </tr>
+      <tr>
+        <td class="col-num">5</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Right L-Stance</td>
+        <td class="col-tech">Middle Double Knife-Hand Block</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">6</td>
+        <td class="col-dir">D</td>
+        <td>Shift L foot forward</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">High Reverse Front Elbow Strike (R)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">7</td>
+        <td class="col-dir">D</td>
+        <td>Move R foot to D</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">Middle Double Knife-Hand Block</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">8</td>
+        <td class="col-dir">D</td>
+        <td>Shift R foot forward</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">High Reverse Front Elbow Strike (L)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">9</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">High Vertical Twin-Fist Punch</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">10</td>
+        <td class="col-dir">D</td>
+        <td>Move R foot to D</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Middle Double Upset Punch <span class="kihap-badge">KIHAP</span></td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr class="section-header part-three">
+        <td colspan="6">Part 3 (Moves 11 - 16) - X-Block, Backfist & Reverse Punch</td>
+      </tr>
+      <tr>
+        <td class="col-num">11</td>
+        <td class="col-dir">C</td>
+        <td>Move L foot to C (Turn Counter-Clockwise)</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">High Forearm X-Block</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">12</td>
+        <td class="col-dir">A</td>
+        <td>Move L foot to A</td>
+        <td class="col-stance">Right L-Stance</td>
+        <td class="col-tech">High Backfist Side Strike (L)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">13</td>
+        <td class="col-dir">A</td>
+        <td>Shift L foot forward</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">Release Wrist Grab & Middle Reverse Punch (R)</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">14</td>
+        <td class="col-dir">B</td>
+        <td>Move R foot to B (Turn Clockwise)</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">High Backfist Side Strike (R)</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">15</td>
+        <td class="col-dir">B</td>
+        <td>Shift R foot forward</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Release Wrist Grab & Middle Reverse Punch (L)</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">16</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">High Double Forearm Block</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr class="section-header part-four">
+        <td colspan="6">Part 4 (Moves 17 - 23) - Side Kick, Double Forearm & Palm Pressing</td>
+      </tr>
+      <tr>
+        <td class="col-num">17</td>
+        <td class="col-dir">D</td>
+        <td>Move R foot to D</td>
+        <td class="col-stance">Right L-Stance</td>
+        <td class="col-tech">Middle Obverse Punch (R)</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">18</td>
+        <td class="col-dir">D</td>
+        <td>Kick & Land Forward</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">High Side Piercing Kick (R) & Double Forearm Block</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">19</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">Middle Obverse Punch (L)</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">20</td>
+        <td class="col-dir">D</td>
+        <td>Kick & Land Forward</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">High Side Piercing Kick (L) & Guarding Block</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">21</td>
+        <td class="col-dir">D</td>
+        <td>Shift L foot forward</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">Low Palm Pressing Block (R)</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr>
+        <td class="col-num">22</td>
+        <td class="col-dir">D</td>
+        <td>Move R foot to D</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">Middle Knife-Hand Guarding Block</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">23</td>
+        <td class="col-dir">D</td>
+        <td>Shift R foot forward</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Low Palm Pressing Block (L)</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr class="section-header part-five">
+        <td colspan="6">Part 5 (Moves 24 - 32) - Crescent Punch & U-Shape Blocks</td>
+      </tr>
+      <tr>
+        <td class="col-num">24</td>
+        <td class="col-dir">E</td>
+        <td>Bring L foot to R foot</td>
+        <td class="col-stance">Close Stance (facing E)</td>
+        <td class="col-tech">High Right Crescent Punch</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">25</td>
+        <td class="col-dir">E</td>
+        <td>Move R foot to E</td>
+        <td class="col-stance">Left L-Stance</td>
+        <td class="col-tech">Right U-Shape Block</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">26</td>
+        <td class="col-dir">F</td>
+        <td>Move L foot to F (Turn Right)</td>
+        <td class="col-stance">Right L-Stance</td>
+        <td class="col-tech">Left U-Shape Block</td>
+        <td class="col-target">High</td>
+      </tr>
+      <tr>
+        <td class="col-num">27</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">Low Double Forearm Block</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr>
+        <td class="col-num">28</td>
+        <td class="col-dir">D</td>
+        <td>Maintain Stance</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">Right Palm Pressing Block</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr>
+        <td class="col-num">29</td>
+        <td class="col-dir">D</td>
+        <td>Move R foot to D</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Middle Angle Punch (R)</td>
+        <td class="col-target">Middle</td>
+      </tr>
+      <tr>
+        <td class="col-num">30</td>
+        <td class="col-dir">D</td>
+        <td>Maintain Stance</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Low Double Forearm Block</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr>
+        <td class="col-num">31</td>
+        <td class="col-dir">D</td>
+        <td>Maintain Stance</td>
+        <td class="col-stance">Right Walking</td>
+        <td class="col-tech">Left Palm Pressing Block</td>
+        <td class="col-target">Low</td>
+      </tr>
+      <tr>
+        <td class="col-num">32</td>
+        <td class="col-dir">D</td>
+        <td>Move L foot to D</td>
+        <td class="col-stance">Left Walking</td>
+        <td class="col-tech">Middle Angle Punch (L) <span class="kihap-badge">KIHAP</span></td>
+        <td class="col-target">Middle</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <div>ITF Taekwon-Do Reference Guide | Form 6 of 11</div>
+    <div>End Position: Right Foot returns to Ready Stance</div>
+  </footer>
+
+</body>
+</html>
