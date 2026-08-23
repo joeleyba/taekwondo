@@ -4,7 +4,15 @@
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2nd Dan & Higher Advanced Black Belt Forms Guide</title>
+  <title>Advanced Black Belt Forms (2nd Dan+) - UMA Master Hub</title>
+  <meta name="description" content="Technical reference and lineage guide for 2nd Dan, 3rd Dan, and higher degree forms (Eui-Am, Choong-Jang, Juche/Ko-Dang, Sam-Il, Yoo-Sin, Choi-Yong, Keumgang, Taebaek).">
+  <link rel="canonical" href="http://www.joeleyba.com/taekwondo/advanced-forms/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.joeleyba.com/taekwondo/advanced-forms/">
+  <meta property="og:title" content="Advanced Black Belt Forms (2nd Dan+) - UMA Master Hub">
+  <meta property="og:description" content="Overview and movement syllabus for 2nd Dan and 3rd Dan ITF patterns and Kukkiwon Poomsae.">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
     :root {
@@ -26,31 +34,24 @@
       margin: 0 auto;
       line-height: 1.5;
     }
-    @media print {
-      body { padding: 0; max-width: 100%; }
-      .no-print { display: none !important; }
-    }
     header {
       border-bottom: 2px solid var(--primary);
       padding-bottom: 16px;
       margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
     }
     header h1 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--primary);
       letter-spacing: -0.5px;
     }
     header p {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-top: 4px;
-    }
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
     }
     .nav-btn {
       text-decoration: none;
@@ -64,7 +65,7 @@
     }
     .nav-btn:hover { background-color: #e0f2fe; }
 
-    .form-card {
+    .card {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -72,49 +73,42 @@
       margin-bottom: 20px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
+    .card h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+    }
 
-    .form-header {
-      display: flex;
-      justify-content: space-between;
+    .form-row {
+      display: grid;
+      grid-template-columns: 180px 100px 100px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 13px;
       align-items: center;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
+    }
+    .form-row:last-child { border-bottom: none; }
+    .form-row.header {
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
       border-bottom: 2px solid var(--border);
     }
 
-    .form-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .korean-sub {
-      font-size: 16px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .rank-badge {
+    .badge-dan {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
       font-size: 11px;
       font-weight: 700;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 4px;
       background-color: #0f172a;
       color: #ffffff;
-    }
-
-    .form-meta {
-      font-size: 13px;
-      color: #0284c7;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .form-desc {
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--text);
+      text-align: center;
     }
 
     footer {
@@ -129,140 +123,89 @@
 </head>
 <body>
 
-  <div class="top-nav no-print">
-    <a href="../index.html" class="nav-btn">&larr; Back to Master Index</a>
-    <div>
-      <a href="../Theory_and_Terminology/index.html" class="nav-btn">Theory & Terminology &rarr;</a>
-    </div>
-  </div>
-
   <header>
-    <h1>2nd Dan & Higher Advanced Black Belt Forms Guide</h1>
-    <p>ITF Chang Hon 24 Patterns & Kukkiwon Dan Poomsae Reference Overview</p>
+    <div>
+      <h1>Advanced Black Belt Forms (2nd Dan+)</h1>
+      <p>Lineage Guide & Technical Movement Syllabus for 2nd Dan, 3rd Dan & Higher Degrees</p>
+    </div>
+    <div>
+      <a href="../index.html" class="nav-btn">&larr; Back to Master Index</a>
+      <a href="../theory-and-terminology/index.html" class="nav-btn" style="margin-left:6px;">Theory & Terminology &rarr;</a>
+    </div>
   </header>
 
-  <!-- PO-EUN -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">PO-EUN <span class="korean-sub">(포은)</span></div>
-      <span class="rank-badge">1st Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">36 Movements | Diagram: Single Straight Horizontal Line (-)</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Pseudonym of Jeong Mong-ju (1337-1392 AD), a loyal subject and poet whose poem "I would not serve another master though I were crucified a hundred times" is known to every Korean. The diagram represents his unyielding, single-minded loyalty to his king and country.
-    </div>
-  </div>
+  <main>
+    <section class="card">
+      <h2>1. 2nd Dan Black Belt Forms (ITF & Kukkiwon)</h2>
+      <div class="form-row header">
+        <div>Pattern Name</div>
+        <div>Degree</div>
+        <div>Movements</div>
+        <div>Historical Significance & Theme</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Eui-Am</strong> (의암)</div>
+        <div><span class="badge-dan">2nd Dan</span></div>
+        <div>45 Moves</div>
+        <div>Named after Son Byong-Hi, leader of the March 1st 1919 Korean Independence Movement. The 45 movements refer to his age when he changed the Donghak religion to Cheondogyo.</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Choong-Jang</strong> (충장)</div>
+        <div><span class="badge-dan">2nd Dan</span></div>
+        <div>52 Moves</div>
+        <div>Named after General Kim Deok-ryeong (1567-1596 AD) of the Joseon Dynasty. The pattern ends with a left-handed attack to symbolize his tragic execution in prison.</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Juche / Ko-Dang</strong> (주체 / 고당)</div>
+        <div><span class="badge-dan">2nd Dan</span></div>
+        <div>45 / 39 Moves</div>
+        <div>Ko-Dang was named after Korean nationalist Cho Man-sik (1883-1950). In 1986, General Choi replaced Ko-Dang with Juche (45 moves). Traditional lineages retain Ko-Dang (39 moves).</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Keumgang</strong> (금강)</div>
+        <div><span class="badge-dan">2nd Dan WT</span></div>
+        <div>27 Moves</div>
+        <div>Official Kukkiwon 2nd Dan Poomsae representing the diamond and Mt. Geumgang, symbolizing unbreakable hardness and majestic spiritual clarity (Crane stance & Mountain blocks).</div>
+      </div>
+    </section>
 
-  <!-- GE-BAEK -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">GE-BAEK <span class="korean-sub">(계백)</span></div>
-      <span class="rank-badge">1st Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">44 Movements | Diagram: Capital I (Modified)</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Named after General Ge-Baek, a great general in the Paekje Dynasty (660 AD). The diagram represents his strict and severe military discipline in defending his homeland.
-    </div>
-  </div>
-
-  <!-- EUI-AM -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">EUI-AM <span class="korean-sub">(의암)</span></div>
-      <span class="rank-badge">2nd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">45 Movements | Diagram: Capital I</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Pseudonym of Son Byong Hi, leader of the Korean independence movement on March 1, 1919. The 45 movements refer to his age when he changed the name of Dong Hak to Chondo Kyo in 1905.
-    </div>
-  </div>
-
-  <!-- CHOONG-JANG -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">CHOONG-JANG <span class="korean-sub">(충장)</span></div>
-      <span class="rank-badge">2nd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">52 Movements | Diagram: Capital I</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Posthumous title granted in 1785 to General Kim Deok-ryeong (1567-1596 AD), an Imjin War commander executed in prison at age 29. Pattern ends with a left-hand attack to symbolize his tragic death before reaching maturity.
-    </div>
-  </div>
-
-  <!-- JUCHE / KO-DANG -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">JUCHE / KO-DANG <span class="korean-sub">(주체 / 고당)</span></div>
-      <span class="rank-badge">2nd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">Juche: 45 Movements | Ko-Dang: 39 Movements</div>
-    <div class="form-desc">
-      <strong>Historical Meaning & Lineage Context:</strong> Juche represents the philosophical idea that man is the master of everything. General Choi replaced Ko-Dang (named after patriot Cho Man-sik) with Juche in 1986. Usage is lineage-dependent: ITF-VNA retains Juche, while several ITF-derived bodies retain or restored Ko-Dang.
-    </div>
-  </div>
-
-  <!-- SAM-IL -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">SAM-IL <span class="korean-sub">(삼일)</span></div>
-      <span class="rank-badge">3rd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">33 Movements | Diagram: Roman Numeral I</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Denotes the historic date of the March 1st Movement (3/1/1919) which sparked the Korean independence movement. The 33 movements represent the 33 Korean patriots who signed the Declaration of Independence.
-    </div>
-  </div>
-
-  <!-- YOO-SIN -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">YOO-SIN <span class="korean-sub">(유신)</span></div>
-      <span class="rank-badge">3rd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">68 Movements | Diagram: Capital I</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Named after General Kim Yoo Sin (668 AD), commanding general during the Silla Dynasty. The 68 movements refer to 668 AD when Korea was united. The ready stance signifies a sword drawn on the right side.
-    </div>
-  </div>
-
-  <!-- CHOI-YONG -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">CHOI-YONG <span class="korean-sub">(최영)</span></div>
-      <span class="rank-badge">3rd Dan Black Belt (ITF)</span>
-    </div>
-    <div class="form-meta">46 Movements | Diagram: Capital I</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Named after General Choi Yong, premier and commander-in-chief during the 14th century Koryo Dynasty, respected for his loyalty and simplicity.
-    </div>
-  </div>
-
-  <!-- KEUMGANG -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">KEUMGANG <span class="korean-sub">(금강)</span></div>
-      <span class="rank-badge">2nd Dan Black Belt (Kukkiwon)</span>
-    </div>
-    <div class="form-meta">27 Movements | Diagram: Mountain Symbol 山</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Symbolizes 'hardness' and 'ponderance', derived from Mt. Keumgang and the diamond. Features Crane Stances (*Hakdari-Seogi*) and Diamond Blocks (*Keumgang-Makgi*).
-    </div>
-  </div>
-
-  <!-- TAEBAEK -->
-  <div class="form-card">
-    <div class="form-header">
-      <div class="form-title">TAEBAEK <span class="korean-sub">(태백)</span></div>
-      <span class="rank-badge">3rd Dan Black Belt (Kukkiwon)</span>
-    </div>
-    <div class="form-meta">26 Movements | Diagram: Chinese Character 工 (Artisan / Work)</div>
-    <div class="form-desc">
-      <strong>Historical Meaning:</strong> Named after Mt. Taebaek, the sacred mountain where Tangun founded Korea. Consists of 26 movements along the 工 diagram line.
-    </div>
-  </div>
+    <section class="card">
+      <h2>2. 3rd Dan Black Belt Forms (ITF & Kukkiwon)</h2>
+      <div class="form-row header">
+        <div>Pattern Name</div>
+        <div>Degree</div>
+        <div>Movements</div>
+        <div>Historical Significance & Theme</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Sam-Il</strong> (삼일)</div>
+        <div><span class="badge-dan">3rd Dan</span></div>
+        <div>33 Moves</div>
+        <div>Commemorates the historic March 1st 1919 Korean Independence Movement. The 33 movements represent the 33 Korean patriots who signed the Declaration of Independence.</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Yoo-Sin</strong> (유신)</div>
+        <div><span class="badge-dan">3rd Dan</span></div>
+        <div>68 Moves</div>
+        <div>Named after General Kim Yoo-Sin, commanding general during the Silla Dynasty who united the Three Kingdoms of Korea in 668 AD. The 68 movements refer to the last two figures of 668 AD.</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Choi-Yong</strong> (최영)</div>
+        <div><span class="badge-dan">3rd Dan</span></div>
+        <div>46 Moves</div>
+        <div>Named after General Choi Yong, premier and commander-in-chief of the armed forces during the 14th century Goryeo Dynasty, famed for his loyalty and patriotism.</div>
+      </div>
+      <div class="form-row">
+        <div><strong>Taebaek</strong> (태백)</div>
+        <div><span class="badge-dan">3rd Dan WT</span></div>
+        <div>26 Moves</div>
+        <div>Official Kukkiwon 3rd Dan Poomsae named after Mt. Taebaek, the sacred mountain where Dangun Wanggeom founded Gojoseon. Traces the Chinese character 工 (26 movements).</div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>UMA Reference Guide | Advanced Black Belt Curriculum Overview</p>
+    <p>UMA Reference Guide &bull; Advanced Black Belt Suite (2nd Dan+)</p>
   </footer>
 
 </body>

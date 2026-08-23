@@ -4,592 +4,616 @@
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KORYO TUL - One-Sheet Breakdown</title>
+  <title>KORYO POOMSAE (고려 품새) - Form #11 | UMA Reference Guide</title>
+  <meta name="description" content="Technical reference one-sheet for Taekwondo KORYO POOMSAE (고려 품새) - 30 Movements, 1st Dan Black Belt (Kukkiwon). Includes stance geometry, step-by-step movement breakdown, and memory anchors.">
+  <link rel="canonical" href="http://www.joeleyba.com/taekwondo/forms/11-koryo.html">
+
+  <!-- OpenGraph / Social Media Meta Tags -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.joeleyba.com/taekwondo/forms/11-koryo.html">
+  <meta property="og:title" content="KORYO POOMSAE (고려 품새) - Form #11 | UMA Reference Guide">
+  <meta property="og:description" content="Complete step-by-step technical reference for KORYO POOMSAE (30 Movements).">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="KORYO POOMSAE (고려 품새) - Form #11 | UMA Reference Guide">
+  <meta name="twitter:description" content="Complete step-by-step technical reference for KORYO POOMSAE (30 Movements).">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-      --primary: #1e293b;
-      --bg-subtle: #f8fafc;
-      --border-color: #e2e8f0;
-      --text-dark: #0f172a;
+      --primary: #0f172a;
+      --accent: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
       --text-muted: #64748b;
+      --heaven-bg: #eff6ff;
+      --heaven-border: #bfdbfe;
+      --heaven-text: #1e40af;
+      --earth-bg: #f0fdf4;
+      --earth-border: #bbf7d0;
+      --earth-text: #166534;
+      --three-bg: #fefce8;
+      --three-border: #fef08a;
+      --three-text: #854d0e;
+      --four-bg: #faf5ff;
+      --four-border: #e9d5ff;
+      --four-text: #6b21a8;
+      --five-bg: #fff1f2;
+      --five-border: #fecdd3;
+      --five-text: #9f1239;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: var(--text-dark);
-      background-color: #ffffff;
+      background-color: var(--bg);
+      color: var(--text);
       padding: 20px;
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
+      line-height: 1.4;
     }
 
-    @media print {
-      body {
-        padding: 0;
-        max-width: 100%;
-      }
-      .no-print {
-        display: none !important;
-      }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
     }
 
-    .top-nav {
+    .title-area h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .title-area h1 span.korean {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+
+    .title-area .belt-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 12.5px;
+    }
+
+    .meta-item strong {
+      display: block;
+      color: var(--text-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    .meta-item span {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .summary-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-size: 12.5px;
+    }
+
+    .summary-card h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .summary-card p {
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .summary-card ul {
+      margin-left: 18px;
+      color: var(--text);
+    }
+
+    .summary-card li {
+      margin-bottom: 3px;
+    }
+
+    .movement-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      font-size: 12px;
+    }
+
+    .movement-table th {
+      background-color: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+      text-align: left;
+      padding: 7px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .movement-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .movement-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .movement-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    .part-header {
+      font-weight: 800;
+      padding: 6px 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .part-heaven { background-color: var(--heaven-bg); color: var(--heaven-text); border-color: var(--heaven-border); }
+    .part-earth { background-color: var(--earth-bg); color: var(--earth-text); border-color: var(--earth-border); }
+    .part-three { background-color: var(--three-bg); color: var(--three-text); border-color: var(--three-border); }
+    .part-four { background-color: var(--four-bg); color: var(--four-text); border-color: var(--four-border); }
+    .part-five { background-color: var(--five-bg); color: var(--five-text); border-color: var(--five-border); }
+
+    .badge-kihap {
+      display: inline-block;
+      background-color: #ef4444;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 9px;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-left: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
-      font-size: 13px;
+      margin-bottom: 16px;
     }
 
     .nav-btn {
       text-decoration: none;
       color: #0284c7;
       font-weight: 600;
-      padding: 4px 10px;
+      padding: 6px 12px;
       border: 1px solid #bae6fd;
       background-color: #f0f9ff;
-      border-radius: 4px;
-    }
-
-    .nav-btn:hover {
-      background-color: #e0f2fe;
-    }
-
-    header {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 10px;
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-
-    .title-area h1 {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--primary);
-    }
-
-    .title-area .korean {
-      font-size: 18px;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-left: 6px;
-    }
-
-    .subtitle {
+      border-radius: 6px;
       font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 2px;
-      font-weight: 500;
     }
 
-    .meta-badges {
-      display: flex;
-      gap: 8px;
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-    }
-
-    .badge.belt {
-      background-color: #0f172a; color: #38bdf8; border: 1.5px solid #0284c7;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .info-card {
-      background-color: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 10px 14px;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    .info-card strong {
-      color: var(--primary);
-    }
-
-    .compass-box {
-      background-color: #fafafa;
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      padding: 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-    }
-
-    .compass-title {
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      font-size: 10px;
-    }
-
-    .compass-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 22px);
-      grid-template-rows: repeat(3, 20px);
-      text-align: center;
-      align-items: center;
-      font-weight: 700;
-    }
-
-    .compass-cell.center {
-      background-color: var(--primary);
-      color: white;
-      border-radius: 3px;
-      font-size: 10px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin-bottom: 14px;
-    }
-
-    th {
-      background-color: var(--primary);
-      color: white;
-      text-align: left;
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    td {
-      padding: 5px 10px;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    tr.section-header td {
-      font-weight: 800;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 5px 10px;
-    }
-
-    tr.part-heaven td {
-      background-color: #e0f2fe;
-      color: #0369a1;
-      border-top: 2px solid #bae6fd;
-    }
-
-    tr.part-earth td {
-      background-color: #fef3c7;
-      color: #b45309;
-      border-top: 2px solid #fde68a;
-    }
-
-    tr.part-three td {
-      background-color: #fce7f3;
-      color: #be185d;
-      border-top: 2px solid #fbcfe8;
-    }
-
-    tr.part-four td {
-      background-color: #dcfce7;
-      color: #15803d;
-      border-top: 2px solid #bbf7d0;
-    }
-
-    tr.part-five td {
-      background-color: #f3e8ff;
-      color: #6b21a8;
-      border-top: 2px solid #e9d5ff;
-    }
-
-    tbody tr:nth-child(even):not(.section-header) {
-      background-color: #f8fafc;
-    }
-
-    .col-num { width: 35px; text-align: center; font-weight: 700; }
-    .col-dir { width: 45px; text-align: center; font-weight: 700; }
-    .col-stance { width: 140px; font-weight: 600; }
-    .col-tech { font-weight: 600; }
-    .col-target { width: 60px; text-align: center; font-weight: 700; }
-
-    .kihap-badge {
-      background-color: #ef4444;
-      color: white;
-      font-size: 9px;
-      font-weight: 800;
-      padding: 2px 5px;
-      border-radius: 3px;
-      margin-left: 4px;
-    }
+    .nav-btn:hover { background-color: #e0f2fe; }
 
     footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 8px;
-      display: flex;
-      justify-content: space-between;
+      text-align: center;
+      margin-top: 24px;
       font-size: 11px;
       color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
     }
 
-    .key-points {
-      background-color: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 6px;
-      padding: 8px 12px;
-      margin-bottom: 14px;
-      font-size: 12px;
-      color: #166534;
-    }
-
-    .key-points ul {
-      margin-left: 18px;
-      margin-top: 3px;
+    @media print {
+      body { padding: 0; max-width: 100%; }
+      .nav-bar, .nav-btn { display: none; }
+      .movement-table { font-size: 10.5px; }
+      .movement-table td, .movement-table th { padding: 4px 6px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="top-nav no-print">
-    <a href="10-kwang-gae.html" class="nav-btn">&larr; Prev Form</a>
-    <a href="../index.html" class="nav-btn">&uarr; Master Index</a>
-    <a href="../advanced-forms/index.html" class="nav-btn">Next Form &rarr;</a>
-  </div>
+  <nav class="nav-bar">
+    <div>
+      <a href="10-kwang-gae.html" class="nav-btn">&larr; Previous Form</a>
+      <a href="../" class="nav-btn" style="margin-left: 6px;">&uarr; Master Hub</a>
+    </div>
+    <div>
+      <a href="../advanced-forms/index.html" class="nav-btn">Next Form &rarr;</a>
+    </div>
+  </nav>
 
   <header>
     <div class="title-area">
-      <h1>KORYO <span class="korean">(고려)</span></h1>
-      <div class="subtitle">30 Movements | Ready Stance: Tongmilgi Junbi-Seogi (Barrel Pushing Ready Stance)</div>
-    </div>
-    <div class="meta-badges">
-      <span class="badge belt">1st Dan Black Belt (Kukkiwon Poomsae)</span>
-      <span class="badge">Form #11</span>
+      <h1>KORYO POOMSAE <span class="korean">고려 품새</span></h1>
+      <span class="belt-badge" style="background-color: #0f172a; color: #ffffff; border: 1.5px solid #334155;">1st Dan Black Belt (Kukkiwon)</span>
     </div>
   </header>
 
-  <div class="summary-grid">
-    <div class="info-card">
-      <p style="margin-bottom: 4px;"><strong>Pattern Meaning:</strong> Named after the Koryo Dynasty (918-1392 AD). Symbolizes 'Seonbae' (learned man of virtue and martial spirit). Kukkiwon 1st Dan Poomsae.</p>
-      <p><strong>Return Foot:</strong> Left Foot returns to Ready Stance.</p>
-    </div>
-    <div class="compass-box">
-      <div class="compass-title">Diagram (Scholar Symbol 士)</div>
-      <div class="compass-grid">
-        <div></div><div>D</div><div></div>
-        <div>B</div><div class="center">X</div><div>A</div>
-        <div></div><div>C</div><div></div>
+  <main>
+    <section class="meta-grid">
+      <div class="meta-item">
+        <strong>Total Movements</strong>
+        <span>30 Moves</span>
       </div>
-      <div style="font-size: 9px; color: #64748b; margin-top: 4px;">D=Front | C=Back | A=Right | B=Left</div>
-    </div>
-  </div>
+      <div class="meta-item">
+        <strong>Ready Stance</strong>
+        <span>Tongmilgi Junbi-Seogi (Pushing Hands Ready Stance)</span>
+      </div>
+      <div class="meta-item">
+        <strong>Diagram Line</strong>
+        <span>Chinese Character 士 (Scholar)</span>
+      </div>
+      <div class="meta-item">
+        <strong>Return Foot</strong>
+        <span>Left Foot</span>
+      </div>
+    </section>
 
-  <div class="key-points">
-    <strong>Key Form Structure & Memory Anchors:</strong>
-    <ul>
-      <li>30 individually counted Kukkiwon poomsae movements.</li><li>Kukkiwon Stances: Dwitkubi (L-Stance equivalent), Apkubi (Front Stance), Juchum-Seogi (Sitting Stance), Ap-Seogi (Short Stance).</li><li>Moves 2-3 & 8-9: Kodeup Yop-Chagi (Low Side Kick followed by High Side Kick).</li><li>Moves 15 & 30: Agwison / Khaljaebi (Arc-Hand Throat Thrust).</li>
-    </ul>
-  </div>
+    <section class="summary-card">
+      <h2>Pattern Meaning</h2>
+      <p>Named after the ancient Goryeo (Koryo) Dynasty (918-1392 AD), famed for the martial fortitude of the scholar-warriors who repelled Mongolian forces.</p>
+      <h2 style="margin-top: 8px;">Key Technical Points & Memory Anchors</h2>
+      <ul>
+          <li>Part 1 (Moves 1-12): Double side kicks (low/high), knifehand neck strikes, reverse punches to B and A, finishing with forward arc-hand throat thrust (Kihap 12).</li>
+          <li>Part 2 (Moves 13-19): Low knifehand block, high knifehand strike, front snap kick, knee joint break (Mureup-Kkeokki), and riding stance punches.</li>
+          <li>Part 3 (Moves 20-26): Front snap kicks, knee joint breaks, high ridgehand blocks, and second arc-hand throat thrust (Kihap 26).</li>
+          <li>Part 4 (Moves 27-30): Low knifehand block, high palm heel strike, and slow pushing posture returning to Tongmilgi Junbi-Seogi.</li>
+      </ul>
+    </section>
 
-  <table>
-    <thead>
-      <tr>
-        <th class="col-num">#</th>
-        <th class="col-dir">Dir</th>
-        <th>Footwork & Turn</th>
-        <th class="col-stance">Stance (Sogi / Seogi)</th>
-        <th class="col-tech">Technique</th>
-        <th class="col-target">Target</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <tr class="section-header part-heaven">
-        <td colspan="6">Part 1 (Moves 1 - 6) - Double Knifehand, Double Side Kick & Inner Block to B</td>
-      </tr>
-      <tr>
-        <td class="col-num">1</td>
-        <td class="col-dir">B</td>
-        <td>Step L foot to B</td>
-        <td class="col-stance">Right Dwitkubi</td>
-        <td class="col-tech">Sonnal Momtong-Makki (Double Knife-Hand Middle Guarding Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">2</td>
-        <td class="col-dir">B</td>
-        <td>Kick to B (Lead Leg)</td>
-        <td class="col-stance">Side Kick</td>
-        <td class="col-tech">Low Yop-Chagi (Low Side Kick)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">3</td>
-        <td class="col-dir">B</td>
-        <td>Kick to B without touching down</td>
-        <td class="col-stance">Side Kick</td>
-        <td class="col-tech">High Yop-Chagi (High Side Kick)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">4</td>
-        <td class="col-dir">B</td>
-        <td>Lower R foot to B</td>
-        <td class="col-stance">Right Apkubi</td>
-        <td class="col-tech">Sonnal Bakkat-Chigi (Right Knife-Hand High Outside Strike)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">5</td>
-        <td class="col-dir">B</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Right Apkubi</td>
-        <td class="col-tech">Momtong Jireugi (Right Middle Punch)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">6</td>
-        <td class="col-dir">B</td>
-        <td>Pull R foot in slightly</td>
-        <td class="col-stance">Left Dwitkubi</td>
-        <td class="col-tech">Anpalmok Momtong-Makki (Left Inner Forearm Middle Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr class="section-header part-earth">
-        <td colspan="6">Part 2 (Moves 7 - 12) - Double Knifehand, Double Side Kick & Inner Block to A</td>
-      </tr>
-      <tr>
-        <td class="col-num">7</td>
-        <td class="col-dir">A</td>
-        <td>Turn 180° Clockwise (Step R foot to A)</td>
-        <td class="col-stance">Left Dwitkubi</td>
-        <td class="col-tech">Sonnal Momtong-Makki (Double Knife-Hand Middle Guarding Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">8</td>
-        <td class="col-dir">A</td>
-        <td>Kick to A (Lead Leg)</td>
-        <td class="col-stance">Side Kick</td>
-        <td class="col-tech">Low Yop-Chagi (Low Side Kick)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">9</td>
-        <td class="col-dir">A</td>
-        <td>Kick to A without touching down</td>
-        <td class="col-stance">Side Kick</td>
-        <td class="col-tech">High Yop-Chagi (High Side Kick)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">10</td>
-        <td class="col-dir">A</td>
-        <td>Lower L foot to A</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Sonnal Bakkat-Chigi (Left Knife-Hand High Outside Strike)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">11</td>
-        <td class="col-dir">A</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Momtong Jireugi (Left Middle Punch)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">12</td>
-        <td class="col-dir">A</td>
-        <td>Pull L foot in slightly</td>
-        <td class="col-stance">Right Dwitkubi</td>
-        <td class="col-tech">Anpalmok Momtong-Makki (Right Inner Forearm Middle Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr class="section-header part-three">
-        <td colspan="6">Part 3 (Moves 13 - 17) - Low Block, Arc-Hand Thrusts & Knee Joint Breaking</td>
-      </tr>
-      <tr>
-        <td class="col-num">13</td>
-        <td class="col-dir">D</td>
-        <td>Turn 90° Left to D (Step L foot)</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Sonnal Arae-Makki (Left Single Knife-Hand Low Block)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">14</td>
-        <td class="col-dir">D</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Khaljaebi / Agwison (Right Arc-Hand / Tiger Mouth Thrust to Throat)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">15</td>
-        <td class="col-dir">D</td>
-        <td>Front Snap Kick to D & Land Forward</td>
-        <td class="col-stance">Right Apkubi</td>
-        <td class="col-tech">Front Snap Kick (R) & Sonnal Arae-Makki + Khaljaebi (L)</td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">16</td>
-        <td class="col-dir">D</td>
-        <td>Front Snap Kick to D & Land Forward</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Front Snap Kick (L) & Sonnal Arae-Makki + Khaljaebi (R) <span class="kihap-badge">KIHAP</span></td>
-        <td class="col-target">High</td>
-      </tr>
-      <tr>
-        <td class="col-num">17</td>
-        <td class="col-dir">D</td>
-        <td>Front Snap Kick to D & Land Forward</td>
-        <td class="col-stance">Right Apkubi</td>
-        <td class="col-tech">Front Snap Kick (R) & Mureup-Kkeokki (Right Knee Joint Breaking Press)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr class="section-header part-four">
-        <td colspan="6">Part 4 (Moves 18 - 24) - Wedging Push Block, Sitting Stance Target Punch & Side Kick</td>
-      </tr>
-      <tr>
-        <td class="col-num">18</td>
-        <td class="col-dir">C</td>
-        <td>Turn 180° Right to C (Step L foot)</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Anpalmok Hecho-Makki (Inner Forearm Wedging Push Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">19</td>
-        <td class="col-dir">C</td>
-        <td>Front Snap Kick to C & Land Forward</td>
-        <td class="col-stance">Left Apkubi</td>
-        <td class="col-tech">Front Snap Kick (L) & Mureup-Kkeokki (Left Knee Joint Breaking)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">20</td>
-        <td class="col-dir">C</td>
-        <td>Pull L foot in slightly</td>
-        <td class="col-stance">Left Ap-Seogi</td>
-        <td class="col-tech">Anpalmok Hecho-Makki (Inner Forearm Wedging Push Block)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">21</td>
-        <td class="col-dir">B</td>
-        <td>Turn 90° Right to B (Step down in Sitting Stance)</td>
-        <td class="col-stance">Juchum-Seogi (facing D)</td>
-        <td class="col-tech">Left Single Knife-Hand Middle Side Block to B</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">22</td>
-        <td class="col-dir">B</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Juchum-Seogi (facing D)</td>
-        <td class="col-tech">Pyojeok-Jireugi (Right Target Punch into Left Open Palm to B)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">23</td>
-        <td class="col-dir">B</td>
-        <td>Cross R foot over L foot & Side Kick to B</td>
-        <td class="col-stance">Apkkoa-Seogi</td>
-        <td class="col-tech">Yop-Chagi (L Side Kick) & Pyonsonkkeut Arae Jecho-Tzireugi (L Spear Hand)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">24</td>
-        <td class="col-dir">A</td>
-        <td>Pull R foot in slightly</td>
-        <td class="col-stance">Right Ap-Seogi (facing A)</td>
-        <td class="col-tech">Arae-Makki (Right Low Outer Forearm Block)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr class="section-header part-five">
-        <td colspan="6">Part 5 (Moves 25 - 30) - Elbow Side Strike, Target Hammer Fist & Final Throat Thrust</td>
-      </tr>
-      <tr>
-        <td class="col-num">25</td>
-        <td class="col-dir">A</td>
-        <td>Step L foot 1 step forward to A</td>
-        <td class="col-stance">Juchum-Seogi (facing D)</td>
-        <td class="col-tech">Right Palm Heel Downward Block & Left Palkup Pyojeok-Chigi (Side Elbow)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">26</td>
-        <td class="col-dir">A</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Juchum-Seogi (facing D)</td>
-        <td class="col-tech">Right Single Knife-Hand Middle Side Block to A</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">27</td>
-        <td class="col-dir">A</td>
-        <td>Maintain Stance</td>
-        <td class="col-stance">Juchum-Seogi (facing D)</td>
-        <td class="col-tech">Left Pyojeok-Jireugi (Target Punch into Right Open Palm to A)</td>
-        <td class="col-target">Middle</td>
-      </tr>
-      <tr>
-        <td class="col-num">28</td>
-        <td class="col-dir">A</td>
-        <td>Cross L foot over R foot & Side Kick to A</td>
-        <td class="col-stance">Apkkoa-Seogi</td>
-        <td class="col-tech">Yop-Chagi (R Side Kick) & Pyonsonkkeut Arae Jecho-Tzireugi (R Spear Hand)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">29</td>
-        <td class="col-dir">D</td>
-        <td>Bring R foot to L foot</td>
-        <td class="col-stance">Moa-Seogi (facing D)</td>
-        <td class="col-tech">Mejumeok Arae Pyojeok-Chigi (Left Hammer-Fist Low Target Strike)</td>
-        <td class="col-target">Low</td>
-      </tr>
-      <tr>
-        <td class="col-num">30</td>
-        <td class="col-dir">C</td>
-        <td>Turn 90° Left to C (Step R foot forward)</td>
-        <td class="col-stance">Right Apkubi</td>
-        <td class="col-tech">Khaljaebi / Agwison (Right Arc-Hand / Tiger Mouth Thrust to Throat) <span class="kihap-badge">KIHAP</span></td>
-        <td class="col-target">High</td>
-      </tr>
-    </tbody>
-  </table>
+    <section>
+      <div class="part-header part-heaven">Part 1: Double Side Kicks, Knifehand Strikes & Arc-Hand Thrust (Moves 1 - 12)</div>
+      <table class="movement-table">
+        <thead>
+          <tr>
+            <th style="width: 6%; text-align:center;">#</th>
+            <th style="width: 8%; text-align:center;">Dir</th>
+            <th style="width: 28%;">Footwork & Action</th>
+            <th style="width: 20%;">Stance</th>
+            <th style="width: 28%;">Technique</th>
+            <th style="width: 10%; text-align:center;">Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; text-align:center;">1</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Turn 90° Left (Move L foot to B)</td>
+            <td>Dwitkubi (Back Stance)</td>
+            <td><strong>Sonnal-Makki (Double Knife-Hand Guarding Block)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">2</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Kick to B</td>
+            <td>Kicking Position</td>
+            <td><strong>Low Side Kick (R) (Kodeup Yop-Chagi)</strong></td>
+            <td style="text-align:center;">Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">3</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Consecutive Kick (Maintain balance)</td>
+            <td>Kicking Position</td>
+            <td><strong>High Side Kick (R)</strong></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">4</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Lower R foot to B</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Sonnal Mok-Chigi (R Knife-Hand Neck Strike)</strong></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">5</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Maintain Stance</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Baro-Jireugi (L Middle Reverse Punch)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">6</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">B</td>
+            <td>Pull L foot into Dwitkubi</td>
+            <td>Dwitkubi (Back Stance)</td>
+            <td><strong>Momtong-Makki (L Middle Block)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">7</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">A</td>
+            <td>Turn 180° Clockwise (Move R foot to A)</td>
+            <td>Dwitkubi (Back Stance)</td>
+            <td><strong>Sonnal-Makki (Double Knife-Hand Guarding Block)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">8</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">A</td>
+            <td>Kick to A</td>
+            <td>Kicking Position</td>
+            <td><strong>Low Side Kick (L) (Kodeup Yop-Chagi)</strong></td>
+            <td style="text-align:center;">Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">9</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">A</td>
+            <td>Consecutive Kick (Maintain balance)</td>
+            <td>Kicking Position</td>
+            <td><strong>High Side Kick (L)</strong></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">10</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">A</td>
+            <td>Lower L foot to A</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Sonnal Mok-Chigi (L Knife-Hand Neck Strike)</strong></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">11</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">A</td>
+            <td>Maintain Stance</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Baro-Jireugi (R Middle Reverse Punch)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">12</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Turn 90° Left, step R foot to D</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Khaljaebi / Agwison (R Arc-Hand Throat Thrust)</strong> <span class="badge-kihap">KIHAP!</span></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="part-header part-earth">Part 2: Ridgehand Blocks, Knee Breaks & Double Punches down Center (Moves 13 - 19)</div>
+      <table class="movement-table">
+        <thead>
+          <tr>
+            <th style="width: 6%; text-align:center;">#</th>
+            <th style="width: 8%; text-align:center;">Dir</th>
+            <th style="width: 28%;">Footwork & Action</th>
+            <th style="width: 20%;">Stance</th>
+            <th style="width: 28%;">Technique</th>
+            <th style="width: 10%; text-align:center;">Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; text-align:center;">13</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Step L foot to D</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Han-Sonnal Arae-Makki & Olgul Bakkat-Chigi</strong></td>
+            <td style="text-align:center;">High/Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">14</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Kick to D</td>
+            <td>Kicking Position</td>
+            <td><strong>Ap-Chagi (R Front Snap Kick)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">15</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Lower R foot to D</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Mureup-Kkeokki (Knee Joint Break)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">16</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Maintain Stance</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Dubon-Jireugi (Double Middle Punch)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">17</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Step L foot forward to D</td>
+            <td>Juchum-Seogi (Riding Stance)</td>
+            <td><strong>Double Low Outer-Forearm Block</strong></td>
+            <td style="text-align:center;">Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">18</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Maintain Stance</td>
+            <td>Juchum-Seogi</td>
+            <td><strong>Twin Side Middle Punch</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">19</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Step R foot forward to D</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Han-Sonnal Arae-Makki & Olgul Bakkat-Chigi</strong></td>
+            <td style="text-align:center;">High/Low</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="part-header part-three">Part 3: Front Kicks, Knee Joint Breaks & Second Arc-Hand Thrust (Moves 20 - 26)</div>
+      <table class="movement-table">
+        <thead>
+          <tr>
+            <th style="width: 6%; text-align:center;">#</th>
+            <th style="width: 8%; text-align:center;">Dir</th>
+            <th style="width: 28%;">Footwork & Action</th>
+            <th style="width: 20%;">Stance</th>
+            <th style="width: 28%;">Technique</th>
+            <th style="width: 10%; text-align:center;">Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; text-align:center;">20</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Kick to D</td>
+            <td>Kicking Position</td>
+            <td><strong>Ap-Chagi (L Front Snap Kick)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">21</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Lower L foot to D</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Mureup-Kkeokki (Knee Joint Break)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">22</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Maintain Stance</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Dubon-Jireugi (Double Middle Punch)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">23</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Turn 180° Left to Face Back (Move L foot to C)</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Sonnal Arae-Makki & High Ridgehand Strike</strong></td>
+            <td style="text-align:center;">High/Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">24</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Kick to C</td>
+            <td>Kicking Position</td>
+            <td><strong>Ap-Chagi (R Front Snap Kick)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">25</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Lower R foot to C</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Mureup-Kkeokki (Knee Joint Break)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">26</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Step L foot forward to C</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Khaljaebi / Agwison (L Arc-Hand Throat Thrust)</strong> <span class="badge-kihap">KIHAP!</span></td>
+            <td style="text-align:center;">High</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="part-header part-four">Part 4: Open Hand Strikes, Low Knifehand Blocks & Pushing Posture (Moves 27 - 30)</div>
+      <table class="movement-table">
+        <thead>
+          <tr>
+            <th style="width: 6%; text-align:center;">#</th>
+            <th style="width: 8%; text-align:center;">Dir</th>
+            <th style="width: 28%;">Footwork & Action</th>
+            <th style="width: 20%;">Stance</th>
+            <th style="width: 28%;">Technique</th>
+            <th style="width: 10%; text-align:center;">Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700; text-align:center;">27</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Step R foot forward to C</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Sonnal Arae-Makki & High Palm Heel Strike</strong></td>
+            <td style="text-align:center;">High/Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">28</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Kick to C</td>
+            <td>Kicking Position</td>
+            <td><strong>Ap-Chagi (L Front Snap Kick)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">29</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">C</td>
+            <td>Lower L foot to C</td>
+            <td>Apkubi (Front Stance)</td>
+            <td><strong>Sonnal Arae-Makki & High Palm Heel Strike</strong></td>
+            <td style="text-align:center;">High/Low</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700; text-align:center;">30</td>
+            <td style="font-weight:700; color:var(--accent); text-align:center;">D</td>
+            <td>Bring L foot to R foot (Facing Front)</td>
+            <td>Tongmilgi Junbi-Seogi</td>
+            <td><strong>Slow Pushing Hands Posture (Closing Breath)</strong></td>
+            <td style="text-align:center;">Middle</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+  </main>
 
   <footer>
-    <div>Taekwon-Do Reference Guide | Form 11 of 11</div>
-    <div>End Position: Left Foot returns to Ready Stance</div>
+    <p>UMA Technical Reference Sheet &bull; KORYO POOMSAE (고려 품새) &bull; 30 Movements</p>
   </footer>
 
 </body>
