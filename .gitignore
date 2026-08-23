@@ -1,0 +1,6 @@
+# Private local drafts & audio assets
+audio-guides/
+*.mp3
+*.wav
+*.m4a
+*.pdf
