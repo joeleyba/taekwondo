@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMA Master Hub - Taekwondo Forms, One-Steps & Curriculum Guide</title>
+  <meta name="description" content="Complete reference guide for Taekwondo Forms (White Belt to 1st Dan & Advanced 2nd Dan+), One-Step Sparring, Kicking Routines, Grab Defenses, and Theory & Terminology.">
+  <link rel="canonical" href="https://www.joeleyba.com/taekwondo/">
+
+  <!-- OpenGraph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.joeleyba.com/taekwondo/">
+  <meta property="og:title" content="UMA Master Hub - Taekwondo Forms & Curriculum Guide">
+  <meta property="og:description" content="Master reference guide for ITF Taekwondo & Kukkiwon Poomsae forms, one-steps, kicks, grab defenses, and theory.">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UMA Master Hub - Taekwondo Forms & Curriculum Guide">
+  <meta name="twitter:description" content="Master reference guide for ITF Taekwondo & Kukkiwon Poomsae forms, one-steps, kicks, grab defenses, and theory.">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --primary: #0f172a;
+      --accent: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 30px 20px;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .curriculum-nav {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .nav-card {
+      background-color: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: #0369a1;
+      transition: transform 0.15s ease, background-color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .nav-card:hover {
+      background-color: #e0f2fe;
+      transform: translateY(-2px);
+    }
+
+    .nav-card h3 {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .nav-card p {
+      font-size: 11px;
+      color: #0284c7;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .form-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .form-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+      border-color: var(--accent);
+    }
+
+    .form-card.advanced-card {
+      background-color: #0f172a;
+      color: #ffffff;
+      border: 1.5px solid #334155;
+    }
+
+    .form-card.advanced-card:hover {
+      border-color: #0284c7;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .card-num {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background-color: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .card-belt {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .form-card.advanced-card .card-title {
+      color: #ffffff;
+    }
+
+    .card-korean {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .form-card.advanced-card .card-korean {
+      color: #94a3b8;
+    }
+
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-card.advanced-card .card-meta {
+      border-top-color: #334155;
+      color: #94a3b8;
+    }
+
+    .card-meaning {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.45;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .form-card.advanced-card .card-meaning {
+      color: #cbd5e1;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UMA Master Hub</h1>
+    <p>Complete Reference Guide for Forms, One-Steps, Kicks, Grab Defenses, Theory & Advanced Black Belt Curriculum</p>
+  </header>
+
+  <div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 14px 18px; margin-bottom: 24px; font-size: 13.5px; line-height: 1.5; color: #0369a1;">
+    <strong>UMA Integrated Curriculum:</strong> Ultimate Martial Arts follows a comprehensive hybrid syllabus combining traditional <strong>ITF Chang Hon Tul</strong> (Forms 1-10) with official <strong>Kukkiwon Dan Poomsae</strong> (Koryo and Advanced Black Belt forms), belt-by-belt one-step sparring, and Hapkido self-defense joint locks.
+  </div>
+
+  <nav class="curriculum-nav">
+    <a href="one-steps/" class="nav-card">
+      <h3>=ƒÑï One Steps & Takedowns &rarr;</h3>
+      <p>White Belt to Black Belt Sparring & Takedowns</p>
+    </a>
+    <a href="kicking-routines/" class="nav-card">
+      <h3>=ƒª¦ Kicking Routines & Defenses &rarr;</h3>
+      <p>Kicking Progressions & Counter Defenses</p>
+    </a>
+    <a href="grab-defenses/" class="nav-card">
+      <h3>G£ï Grab Defenses & Hapkido &rarr;</h3>
+      <p>Wrist Escapes, Chokes & Joint Locks</p>
+    </a>
+    <a href="theory-and-terminology/" class="nav-card">
+      <h3>=ƒô£ Theory, Tenets & Terminology &rarr;</h3>
+      <p>5 Tenets, Student Creed & Stances</p>
+    </a>
+  </nav>
+
+  <main>
+    <div class="section-title">Forms & Poomsae Suite</div>
+
+    <div class="forms-grid">
+      <a href="forms/01-chon-ji.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #1</span>
+            <span class="card-belt" style="background-color: #ffffff; color: #0f172a; border: 1.5px solid #cbd5e1;">White Belt</span>
+          </div>
+          <div class="card-title">CHON-JI <span class="card-korean">(8¦£8ºÇ)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Chon-Ji literally means 'Heaven and Earth'. In the Orient, it is interpreted as the creation of the world or the beginning of human history, performed by the beginner. Consists of two similar parts (Heaven & Earth).</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>19</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/02-dan-gun.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #2</span>
+            <span class="card-belt" style="background-color: #fef08a; color: #713f12; border: 1.5px solid #fde047;">Yellow Belt</span>
+          </div>
+          <div class="card-title">DAN-GUN <span class="card-korean">(dï¿O¦¦)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Named after Dangun Wanggeom, the legendary founder of Gojoseon. Korean tradition dates the kingdom's foundation to 2333 BCE.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>21</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/03-do-san.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #3</span>
+            <span class="card-belt" style="background-color: #ffedd5; color: #9a3412; border: 1.5px solid #fdba74;">Orange Belt</span>
+          </div>
+          <div class="card-title">DO-SAN <span class="card-korean">(dÅä8é¦)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Do-San was the pen name of Korean patriot, educator, and independence activist Ahn Chang-Ho (1878-1938). The 24 movements represent his life and his devotion to Korean education and independence.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>24</strong> Movements</span>
+          <span>Return: <strong>Right Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/04-won-hyo.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #4</span>
+            <span class="card-belt" style="background-color: #dcfce7; color: #14532d; border: 1.5px solid #86efac;">Green Belt</span>
+          </div>
+          <div class="card-title">WON-HYO <span class="card-korean">(8¢ÉfÜ¿)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Wonhyo was an influential Korean Buddhist monk and scholar who lived from 617 to 686 AD. He helped popularize Buddhism, including Pure Land teachings, among the people of Silla.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>28</strong> Movements</span>
+          <span>Return: <strong>Right Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/05-yul-gok.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #5</span>
+            <span class="card-belt" style="background-color: #f3e8ff; color: #581c87; border: 1.5px solid #d8b4fe;">Purple Belt</span>
+          </div>
+          <div class="card-title">YUL-GOK <span class="card-korean">(8£¿O¦í)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Yul-Gok was the pen name of Korean philosopher and scholar Yi I (1536-1584), nicknamed the 'Confucius of Korea'. The 38 movements refer to his birthplace near the 38th parallel, and the diagram represents the scholar (sú½).</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>38</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/06-joong-gun.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #6</span>
+            <span class="card-belt" style="background-color: #dbeafe; color: #1e3a8a; border: 1.5px solid #93c5fd;">Blue Belt</span>
+          </div>
+          <div class="card-title">JOONG-GUN <span class="card-korean">(8ñæO++)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Named after Korean independence activist An Jung-geun (commonly written Ahn Joong-Gun in Taekwon-Do), who assassinated It+ì Hirobumi, Japan's first Resident-General of Korea in 1909. An was executed in 1910; the 32 movements represent his age under traditional Korean age counting (30 by modern reckoning).</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>32</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/07-toi-gye.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #7</span>
+            <span class="card-belt" style="background-color: #fee2e2; color: #991b1b; border: 1.5px solid #fca5a5;">Red Belt</span>
+          </div>
+          <div class="card-title">TOI-GYE <span class="card-korean">(fç¦O¦ä)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Toi-Gye was the pen name of Yi Hwang, a prominent Korean Neo-Confucian scholar who lived from 1501 to 1570. The 37 movements refer to his birthplace near the 37th parallel, and the floor pattern represents the Chinese character for scholar (sú½).</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>37</strong> Movements</span>
+          <span>Return: <strong>Right Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/08-hwa-rang.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #8</span>
+            <span class="card-belt" style="background-color: #fef3c7; color: #78350f; border: 1.5px solid #fcd34d;">Brown Belt (2nd Kup)</span>
+          </div>
+          <div class="card-title">HWA-RANG <span class="card-korean">(fÖödPæ)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Hwa-Rang is named after an elite youth organization of Korea's Silla Kingdom. Members of the Hwa-Rang became influential military and political leaders. The 29 movements refer to the 29th Infantry Division where Taekwon-Do developed into maturity.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>29</strong> Movements</span>
+          <span>Return: <strong>Right Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/09-choong-moo.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #9</span>
+            <span class="card-belt" style="background-color: #fee2e2; color: #991b1b; border: 1.5px solid #0f172a;">Brown Belt Black Stripe (1st Kup)</span>
+          </div>
+          <div class="card-title">CHOONG-MOO <span class="card-korean">(8¦¬d¼¦)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Choong-Moo was the posthumous title of Admiral Yi Sun-sin of Korea's Joseon Dynasty. He redesigned and deployed the armored turtle ship (Geobukseon) during the Japanese invasions beginning in 1592. The pattern ends with a left-hand attack, traditionally symbolizing his death before he could demonstrate his full potential, constrained by his loyalty to the king.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>30</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/10-kwang-gae.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #10</span>
+            <span class="card-belt" style="background-color: #0f172a; color: #ffffff; border: 1.5px solid #334155;">1st Dan Black Belt GÇó Chang-Hon Form</span>
+          </div>
+          <div class="card-title">KWANG-GAE <span class="card-korean">(O¦æO¦£)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Kwang-Gae is named after Gwanggaeto the Great, the nineteenth king of Goguryeo. Beginning his reign in 391 AD, he expanded Goguryeo to its greatest territorial extent. The pattern has 39 movements, referring to the first two numbers of 391. Its plus-shaped diagram (+) represents the expansion and recovery of territory.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>39</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+      <a href="forms/11-koryo.html" class="form-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num">Form #11</span>
+            <span class="card-belt" style="background-color: #0f172a; color: #ffffff; border: 1.5px solid #334155;">1st Dan Black Belt (Kukkiwon)</span>
+          </div>
+          <div class="card-title">KORYO <span class="card-korean">(O¦ádáñ)</span></div>
+          <div class="card-meaning"><strong>Pattern Meaning:</strong> Koryo represents the seonbae: a learned person of upright character who combines scholarly discipline with a strong martial spirit. Kukkiwon connects this lineage through Goguryeo, Balhae, and Goryeo. The floor pattern traces sú½, the character for scholar.</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>30</strong> Movements</span>
+          <span>Return: <strong>Left Foot</strong></span>
+        </div>
+      </a>
+
+
+      <a href="advanced-forms/index.html" class="form-card advanced-card">
+        <div>
+          <div class="card-top">
+            <span class="card-num" style="background-color: #0284c7; color: #ffffff;">2nd Dan+</span>
+            <span class="card-belt" style="background-color: #1e293b; color: #38bdf8; border: 1.5px solid #0284c7;">Black Belt Suite</span>
+          </div>
+          <div class="card-title">ADVANCED FORMS <span class="card-korean">(O¦áO+ë fÆê8âê)</span></div>
+          <div class="card-meaning"><strong>Overview:</strong> Comprehensive technical reference and lineage guide for 2nd Dan, 3rd Dan, and higher degree forms (Eui-Am, Choong-Jang, Juche/Ko-Dang, Sam-Il, Yoo-Sin, Choi-Yong, Keumgang, Taebaek).</div>
+        </div>
+        <div class="card-meta">
+          <span><strong>8+</strong> Advanced Forms</span>
+          <span>Lineage: <strong>ITF & Kukkiwon</strong></span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Ultimate Martial Arts (UMA) Taekwondo Curriculum Master Hub &bull; 2026 Reference Guide</p>
+  </footer>
+
+</body>
+</html>
