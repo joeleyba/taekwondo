@@ -262,11 +262,291 @@
       color: var(--text-muted);
       border-top: 1px solid var(--border);
       padding-top: 12px;
+    /* Video Study Hub Styles */
+    .video-study-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .video-study-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .video-study-header h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .video-study-subtitle {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+    .instructor-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .instructor-tab-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+    .instructor-tab-btn:hover {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+    .instructor-tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .tab-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .tab-tag-spoken {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .instructor-tab-btn.active .tab-tag-spoken {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    .tab-tag-visual {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+    .instructor-tab-btn.active .tab-tag-visual {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    .video-embed-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #0f172a;
+      margin-bottom: 10px;
+    }
+    .video-embed-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-info-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+    .video-info-desc {
+      font-weight: 500;
+      color: #334155;
+    }
+    .video-external-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .video-external-link:hover {
+      text-decoration: underline;
+    /* Audio Practice Bar Styles */
+    .audio-practice-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .audio-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .audio-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .audio-icon {
+      font-size: 22px;
+    }
+    .audio-title-group h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 2px 0;
+    }
+    .audio-subtitle {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .audio-speed-controls {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .speed-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-right: 4px;
+    }
+    .speed-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 4px 9px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.1s ease;
+    }
+    .speed-btn:hover {
+      background: #e2e8f0;
+    }
+    .speed-btn.active {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+    .audio-player-wrapper {
+      width: 100%;
+    }
+    .audio-player-wrapper audio {
+      width: 100%;
+      height: 38px;
+      border-radius: 4px;
+    }
+
+    /* Instructor Commentary & Biomechanics Styles */
+    .commentary-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .commentary-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .commentary-header h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .commentary-badge {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background-color: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .commentary-intro {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+    .commentary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .commentary-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 12px;
+    }
+    .commentary-item h4 {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 4px 0;
+    }
+    .commentary-item p {
+      color: #334155;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .commentary-item.highlight-item {
+      background: #fffbeb;
+      border-color: #fef08a;
+    }
+    .commentary-item.highlight-item h4 {
+      color: #92400e;
     }
 
     @media print {
       body { padding: 0; max-width: 100%; }
-      .nav-bar, .nav-btn { display: none; }
+      .nav-bar, .nav-btn, .video-study-card, .audio-practice-card { display: none; }
       .movement-table { font-size: 10.5px; }
       .movement-table td, .movement-table th { padding: 4px 6px; }
     }
@@ -325,6 +605,102 @@
           <li>Part 4 (Moves 20-25): Low block facing back, three reverse punches in alternating L-stances (21-23), low X-fist pressing block, and sliding side-elbow thrust (Kihap 25 is a school/instructor convention).</li>
           <li>Part 5 (Moves 26-29): Bring L foot to R turning counter-clockwise into closed stance with opposing high/low forearm blocks (26-27), finishing with knifehand guarding blocks to B and A.</li>
       </ul>
+    </section>
+
+    <section class="video-study-card">
+      <div class="video-study-header">
+        <h2>📹 Video Study & Instructor Perspectives</h2>
+        <span class="video-study-subtitle">Compare spoken breakdowns, mechanics, and visual standards</span>
+      </div>
+
+      <div class="instructor-tabs" id="instructorTabs"></div>
+
+      <div class="video-embed-wrapper">
+        <iframe id="videoPlayerFrame" 
+                src="https://www.youtube.com/embed/cYD0-cvdr6k" 
+                title="Hwa-Rang Tul Tutorial" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen 
+                loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="video-info-bar">
+        <div class="video-info-desc" id="videoInstructorNote">
+          <strong>Sam Tilley:</strong> Step-by-step spoken walkthrough with detailed sine-wave cadence and stance cues.
+        </div>
+        <a id="videoExternalLink" class="video-external-link" href="https://youtu.be/cYD0-cvdr6k" target="_blank" rel="noopener noreferrer">
+          Watch on YouTube &nearr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Audio Practice Walkthrough Bar -->
+    <section class="audio-practice-card">
+      <div class="audio-header">
+        <div class="audio-title-group">
+          <span class="audio-icon">🎧</span>
+          <div>
+            <h3>Audio Practice Walkthrough</h3>
+            <p class="audio-subtitle">Step-by-step physical walkthrough (Female Voice: Jenny) with timed execution pauses</p>
+          </div>
+        </div>
+        <div class="audio-speed-controls">
+          <span class="speed-label">Speed:</span>
+          <button type="button" class="speed-btn" onclick="setAudioSpeed(0.8)">0.8x</button>
+          <button type="button" class="speed-btn active" onclick="setAudioSpeed(1.0)">1.0x</button>
+          <button type="button" class="speed-btn" onclick="setAudioSpeed(1.2)">1.2x</button>
+        </div>
+      </div>
+      <div class="audio-player-wrapper">
+        <audio id="hwaRangAudio" controls preload="metadata" style="width: 100%;">
+          <source src="../audio-guides/08-hwa-rang-walkthrough.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+    <!-- Instructor Commentary & Biomechanics Section -->
+    <section class="commentary-card">
+      <div class="commentary-header">
+        <h2>🥋 Instructor Commentary & Biomechanics Breakdown</h2>
+        <span class="commentary-badge">GM Donato Nardizzi & Sam Tilley Technical Notes</span>
+      </div>
+      <p class="commentary-intro">
+        Technical analysis, common traps, and biomechanical principles transcribed from expert walkthroughs. Keep these nuances in mind while practicing alongside the audio track:
+      </p>
+
+      <div class="commentary-grid">
+        <div class="commentary-item">
+          <h4>Moa Junbi Sogi C (Closed Ready Stance C)</h4>
+          <p><strong>Hand Geometry:</strong> Left thumb rests over the main knuckle of the right middle finger, with the fingertip of the left middle finger on the third knuckle. Overlap left over right, held exactly 10 cm from the lower abdomen.</p>
+        </div>
+
+        <div class="commentary-item">
+          <h4>Movements 1–3: Sitting Stance & Punch Cadence</h4>
+          <p><strong>Sine-Wave Rhythm:</strong> The palm pushing block is an individual movement. For the two punches that follow, maintain a distinct <em>down-up-down</em> sine-wave bounce on each punch rather than rushing into fast motion.</p>
+        </div>
+
+        <div class="commentary-item">
+          <h4>Movements 4–7: L-Stance through Vertical Stance Transitions</h4>
+          <p><strong>Stance Dynamics:</strong> In Movement 6, fixed stance is one shoulder-width longer than L-stance with an even 50/50 weight distribution. In Movement 7 (vertical stance), pull the front foot inward to 60/40 weight distribution and rotate deeply from the shoulder. <em>Key transition:</em> You must re-bend the knees before stepping forward to Movement 8 to re-engage the sine wave.</p>
+        </div>
+
+        <div class="commentary-item highlight-item">
+          <h4>Movements 11–12: The Release Motion Trap (Crucial)</h4>
+          <p><strong>Why Pulling In Fails:</strong> Never pull the fist inward toward your chest! If an opponent grips your wrist with their weight back, pulling is ineffective. Instead, advance your right elbow forward 45° to approach them. Drag the rear leg inward while resisting to maintain balance, cup left palm over right fist, and pull both arms away as you drive the side kick.</p>
+        </div>
+
+        <div class="commentary-item">
+          <h4>Movements 21–23: L-Stance Obverse Punch Angle</h4>
+          <p><strong>15° Angle:</strong> Because the body is half-facing in L-stance, punching to the exact centerline is structurally weak. Aim 15° outward in line with the shoulder. Pivot the lower body early so the abdomen and shoulders can wind up and drive full mass forward.</p>
+        </div>
+
+        <div class="commentary-item">
+          <h4>Movements 26–27: Opposing High-Low Forearm Blocks</h4>
+          <p><strong>Lower Arm Role:</strong> The downward arm is extended straight as a checking/guarding posture at shoulder line (not an active block). The upper block protects temple level. Drop slightly into the heels on impact to generate downward mass.</p>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -652,5 +1028,74 @@
     <p>Personal UMA Taekwondo Study Reference &bull; HWA-RANG (화랑) &bull; 29 Movements</p>
   </footer>
 
+  <script>
+    (function() {
+      const videoData = [
+        {
+          id: "cYD0-cvdr6k",
+          instructor: "Sam Tilley",
+          type: "spoken",
+          badge: "Spoken Walkthrough",
+          desc: "Step-by-step spoken walkthrough with detailed sine-wave cadence and stance cues."
+        },
+        {
+          id: "eYWfBb4xCWs",
+          instructor: "Donato Nardizzi",
+          type: "spoken",
+          badge: "Technical Mechanics",
+          desc: "Grand Master Donato Nardizzi (9th Dan ITF) - in-depth biomechanics, power generation, and sine-wave theory."
+        },
+        {
+          id: "nY5_1XkejBw",
+          instructor: "Joel Denis",
+          type: "visual",
+          badge: "Visual Only",
+          desc: "Visual reference performance demonstrating full form continuity and timing."
+        },
+        {
+          id: "1oZjONeEBkQ",
+          instructor: "ITF Tuls",
+          type: "visual",
+          badge: "Visual Standard",
+          desc: "Standard ITF pattern demonstration and competition-pace reference."
+        }
+      ];
+
+      const tabsContainer = document.getElementById("instructorTabs");
+      const iframe = document.getElementById("videoPlayerFrame");
+      const noteEl = document.getElementById("videoInstructorNote");
+      const linkEl = document.getElementById("videoExternalLink");
+
+      if (!tabsContainer || !iframe || !videoData.length) return;
+
+      videoData.forEach((item, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "instructor-tab-btn" + (index === 0 ? " active" : "");
+        btn.innerHTML = (item.type === "spoken" ? "🎙️ " : "👁️ ") + item.instructor + 
+          ' <span class="tab-tag tab-tag-' + item.type + '">' + item.badge + '</span>';
+        
+        btn.addEventListener("click", function() {
+          document.querySelectorAll(".instructor-tab-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          iframe.src = "https://www.youtube.com/embed/" + item.id;
+          noteEl.innerHTML = "<strong>" + item.instructor + ":</strong> " + item.desc;
+          linkEl.href = "https://youtu.be/" + item.id;
+        });
+
+        tabsContainer.appendChild(btn);
+      });
+    })();
+
+    function setAudioSpeed(speed) {
+      const audio = document.getElementById("hwaRangAudio");
+      if (audio) {
+        audio.playbackRate = speed;
+      }
+      document.querySelectorAll(".speed-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.textContent.trim() === (speed + "x"));
+      });
+    }
+  </script>
 </body>
 </html>

@@ -264,9 +264,141 @@
       padding-top: 12px;
     }
 
+    /* Video Study Hub Styles */
+    .video-study-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .video-study-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .video-study-header h2 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .video-study-subtitle {
+      font-size: 11.5px;
+      color: var(--text-muted);
+    }
+    .instructor-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .instructor-tab-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: inherit;
+    }
+    .instructor-tab-btn:hover {
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+    .instructor-tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .tab-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .tab-tag-spoken {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .instructor-tab-btn.active .tab-tag-spoken {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    .tab-tag-visual {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+    .instructor-tab-btn.active .tab-tag-visual {
+      background: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+    .video-embed-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #0f172a;
+      margin-bottom: 10px;
+    }
+    .video-embed-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-info-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+    .video-info-desc {
+      font-weight: 500;
+      color: #334155;
+    }
+    .video-external-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .video-external-link:hover {
+      text-decoration: underline;
+    }
+
     @media print {
       body { padding: 0; max-width: 100%; }
-      .nav-bar, .nav-btn { display: none; }
+      .nav-bar, .nav-btn, .video-study-card { display: none; }
       .movement-table { font-size: 10.5px; }
       .movement-table td, .movement-table th { padding: 4px 6px; }
     }
@@ -324,6 +456,34 @@
           <li>Part 3 (Moves 17-19): Finish with three punches facing front: forward once, backward twice.</li>
           <li>Left Foot steps forward to return to Parallel Ready Stance. (Kihap on Move 19 is a school/instructor convention; not specified in General Choi text).</li>
       </ul>
+    </section>
+
+    <section class="video-study-card">
+      <div class="video-study-header">
+        <h2>📹 Video Study & Instructor Perspectives</h2>
+        <span class="video-study-subtitle">Compare spoken breakdowns, mechanics, and visual standards</span>
+      </div>
+
+      <div class="instructor-tabs" id="instructorTabs"></div>
+
+      <div class="video-embed-wrapper">
+        <iframe id="videoPlayerFrame" 
+                src="https://www.youtube.com/embed/HmoQPtsSXbY" 
+                title="Chon-Ji Tul Tutorial" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen 
+                loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="video-info-bar">
+        <div class="video-info-desc" id="videoInstructorNote">
+          <strong>Sam Tilley:</strong> Step-by-step spoken walkthrough with detailed sine-wave cadence and stance cues.
+        </div>
+        <a id="videoExternalLink" class="video-external-link" href="https://youtu.be/HmoQPtsSXbY" target="_blank" rel="noopener noreferrer">
+          Watch on YouTube &nearr;
+        </a>
+      </div>
     </section>
 
     <section>
@@ -539,5 +699,71 @@
     <p>Personal UMA Taekwondo Study Reference &bull; CHON-JI (천지) &bull; 19 Movements</p>
   </footer>
 
+  <script>
+    (function() {
+      const videoData = [
+        {
+          id: "HmoQPtsSXbY",
+          instructor: "Sam Tilley",
+          type: "spoken",
+          badge: "Spoken Walkthrough",
+          desc: "Step-by-step spoken walkthrough with detailed sine-wave cadence and stance cues."
+        },
+        {
+          id: "OPY-Zhfudq8",
+          instructor: "Donato Nardizzi",
+          type: "spoken",
+          badge: "Technical Mechanics",
+          desc: "Grand Master Donato Nardizzi (9th Dan ITF) - in-depth biomechanics, power generation, and sine-wave theory."
+        },
+        {
+          id: "CGQoQSVSSC0",
+          instructor: "Jalyn Croft",
+          type: "spoken",
+          badge: "Spoken Walkthrough",
+          desc: "Spoken pattern breakdown and step-by-step guidance."
+        },
+        {
+          id: "x4g7JMmD6gQ",
+          instructor: "Joel Denis",
+          type: "visual",
+          badge: "Visual Only",
+          desc: "Visual reference performance demonstrating full form continuity and timing."
+        },
+        {
+          id: "pRbmNys1tKI",
+          instructor: "ITF Tuls",
+          type: "visual",
+          badge: "Visual Standard",
+          desc: "Standard ITF pattern demonstration and competition-pace reference."
+        }
+      ];
+
+      const tabsContainer = document.getElementById("instructorTabs");
+      const iframe = document.getElementById("videoPlayerFrame");
+      const noteEl = document.getElementById("videoInstructorNote");
+      const linkEl = document.getElementById("videoExternalLink");
+
+      if (!tabsContainer || !iframe || !videoData.length) return;
+
+      videoData.forEach((item, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "instructor-tab-btn" + (index === 0 ? " active" : "");
+        btn.innerHTML = (item.type === "spoken" ? "🎙️ " : "👁️ ") + item.instructor + 
+          ' <span class="tab-tag tab-tag-' + item.type + '">' + item.badge + '</span>';
+        
+        btn.addEventListener("click", function() {
+          document.querySelectorAll(".instructor-tab-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          iframe.src = "https://www.youtube.com/embed/" + item.id;
+          noteEl.innerHTML = "<strong>" + item.instructor + ":</strong> " + item.desc;
+          linkEl.href = "https://youtu.be/" + item.id;
+        });
+
+        tabsContainer.appendChild(btn);
+      });
+    })();
+  </script>
 </body>
 </html>
