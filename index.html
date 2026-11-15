@@ -14,68 +14,116 @@
   <meta property="og:description" content="Personal Taekwondo notes from Master Tom Malone's UMA curriculum, organized by belt level and topic.">
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
     :root {
       --primary: #0f172a;
       --accent: #0284c7;
-      --bg: #f8fafc;
+      --accent-soft: #e0f2fe;
+      --bg: #f1f5f9;
       --card-bg: #ffffff;
+      --sub-bg: #f8fafc;
       --border: #e2e8f0;
-      --text: #1e293b;
+      --text: #0f172a;
+      --text-body: #334155;
       --text-muted: #64748b;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px -8px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+    }
+    [data-theme="dark"] {
+      --primary: #f8fafc;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.14);
+      --bg: #0b1120;
+      --card-bg: #111827;
+      --sub-bg: #1e293b;
+      --border: #1f2937;
+      --text: #f1f5f9;
+      --text-body: #cbd5e1;
+      --text-muted: #94a3b8;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 28px -8px rgba(0, 0, 0, 0.45);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      padding: 30px 20px;
-      max-width: 1120px;
+      padding: 24px 20px 60px;
+      max-width: 1140px;
       margin: 0 auto;
-      line-height: 1.5;
+      line-height: 1.55;
+      transition: background-color 0.2s ease, color 0.2s ease;
     }
     header {
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 16px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0c4a6e 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 24px 28px;
       margin-bottom: 24px;
+      box-shadow: 0 12px 30px -10px rgba(15, 23, 42, 0.35);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
     header h1 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       font-size: 28px;
       font-weight: 800;
-      color: var(--primary);
-      letter-spacing: -0.5px;
+      color: #ffffff;
+      letter-spacing: -0.6px;
     }
     header p {
-      font-size: 14px;
-      color: var(--text-muted);
+      font-size: 13.5px;
+      color: #cbd5e1;
       margin-top: 4px;
+    }
+    .theme-toggle {
+      appearance: none;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
     }
 
     .nav-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
       gap: 12px;
       margin-bottom: 28px;
     }
     .nav-card {
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px;
+      border-radius: 12px;
+      padding: 15px 16px;
       text-decoration: none;
       color: var(--text);
-      transition: all 0.15s ease;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      transition: all 0.18s ease;
+      box-shadow: var(--shadow-sm);
     }
     .nav-card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-md);
     }
     .nav-card strong {
       display: block;
-      color: var(--primary);
+      color: var(--text);
       font-size: 14px;
+      font-weight: 700;
       margin-bottom: 4px;
     }
     .nav-card span {
@@ -92,10 +140,11 @@
       margin-bottom: 14px;
     }
     .section-title {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       font-size: 20px;
       font-weight: 800;
-      color: var(--primary);
-      padding-left: 10px;
+      color: var(--text);
+      padding-left: 12px;
       border-left: 4px solid var(--accent);
     }
 
@@ -103,21 +152,22 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 22px;
+      margin-bottom: 16px;
       padding: 12px;
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
     }
     .belt-pill {
       appearance: none;
       border: 1px solid var(--border);
-      background-color: #f8fafc;
+      background-color: var(--sub-bg);
       color: var(--text);
       font-family: inherit;
       font-size: 12px;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 6px 13px;
       border-radius: 999px;
       cursor: pointer;
       display: inline-flex;
@@ -127,12 +177,13 @@
     }
     .belt-pill:hover {
       border-color: var(--accent);
-      background-color: #f0f9ff;
+      background-color: var(--accent-soft);
     }
     .belt-pill.active {
-      background-color: var(--primary);
+      background-color: var(--accent);
       color: #ffffff;
-      border-color: var(--primary);
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);
     }
     .pill-dot {
       width: 9px;
@@ -146,16 +197,16 @@
       scroll-margin-top: 16px;
       background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 14px;
       margin-bottom: 22px;
       overflow: hidden;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: var(--shadow-md);
     }
     .belt-curriculum-card.hidden {
       display: none;
     }
     .belt-banner {
-      padding: 14px 20px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -163,20 +214,25 @@
       gap: 10px;
       border-bottom: 1px solid var(--border);
     }
+    [data-theme="dark"] .belt-banner {
+      background: var(--sub-bg) !important;
+      color: var(--text) !important;
+    }
     .belt-banner-title {
       display: flex;
       align-items: center;
       gap: 10px;
     }
     .belt-banner-title h2 {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       font-size: 18px;
       font-weight: 800;
       margin: 0;
     }
     .belt-swatch {
-      width: 26px;
+      width: 28px;
       height: 12px;
-      border-radius: 3px;
+      border-radius: 4px;
       display: inline-block;
     }
     .belt-form-link {
@@ -184,32 +240,32 @@
       font-weight: 700;
       text-decoration: none;
       color: var(--accent);
-      background-color: #ffffff;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
-      padding: 6px 12px;
-      border-radius: 6px;
+      padding: 6px 13px;
+      border-radius: 8px;
       transition: all 0.15s ease;
     }
     .belt-form-link:hover {
       border-color: var(--accent);
-      background-color: #f0f9ff;
+      background-color: var(--accent-soft);
     }
 
     .belt-body {
-      padding: 18px 20px;
+      padding: 20px;
     }
     .form-summary-box {
-      background-color: #f8fafc;
+      background-color: var(--sub-bg);
       border: 1px solid var(--border);
       border-left: 4px solid var(--accent);
-      border-radius: 6px;
-      padding: 12px 14px;
-      margin-bottom: 16px;
+      border-radius: 8px;
+      padding: 13px 15px;
+      margin-bottom: 18px;
       font-size: 13px;
-      color: #334155;
+      color: var(--text-body);
     }
     .form-summary-box strong a {
-      color: var(--primary);
+      color: var(--text);
       text-decoration: none;
     }
     .form-summary-box strong a:hover {
@@ -219,7 +275,7 @@
     .form-meta-line {
       font-size: 12px;
       color: var(--text-muted);
-      margin: 2px 0 6px 0;
+      margin: 3px 0 6px 0;
     }
 
     .topic-columns {
@@ -228,25 +284,25 @@
       gap: 16px;
     }
     .topic-box {
-      background-color: #ffffff;
+      background-color: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 14px 16px;
+      border-radius: 10px;
+      padding: 15px 16px;
     }
     .topic-box-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
-      padding-bottom: 6px;
+      margin-bottom: 10px;
+      padding-bottom: 7px;
       border-bottom: 1px solid var(--border);
     }
     .topic-box-header h3 {
-      font-size: 13.5px;
+      font-size: 12.5px;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--text);
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.5px;
     }
     .topic-box-header a {
       font-size: 11.5px;
@@ -260,10 +316,10 @@
     .topic-list {
       margin-left: 18px;
       font-size: 13px;
-      color: #334155;
+      color: var(--text-body);
     }
     .topic-list li {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
     .topic-list ul {
       margin-left: 16px;
@@ -272,9 +328,9 @@
     .sub-heading {
       font-size: 12px;
       font-weight: 700;
-      color: var(--primary);
-      margin-top: 10px;
-      margin-bottom: 4px;
+      color: var(--text);
+      margin-top: 12px;
+      margin-bottom: 5px;
     }
 
     footer {
@@ -289,7 +345,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: var(--primary);
+      background-color: #0f172a;
       color: #ffffff;
       border: 1px solid #334155;
       border-radius: 999px;
@@ -298,7 +354,7 @@
       font-size: 12px;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.2s ease, transform 0.15s ease;
@@ -313,13 +369,151 @@
       border-color: var(--accent);
       transform: translateY(-2px);
     }
+
+    .study-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1 1 240px;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+      padding: 7px 30px 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 13px;
+      color: var(--text);
+      background-color: var(--sub-bg);
+      outline: none;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+      background-color: var(--card-bg);
+    }
+    .search-clear {
+      position: absolute;
+      right: 8px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1;
+      cursor: pointer;
+      display: none;
+      padding: 2px 4px;
+    }
+    .search-clear.visible {
+      display: inline-block;
+    }
+    .cumulative-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      user-select: none;
+      padding: 5px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--sub-bg);
+    }
+    .cumulative-label:hover {
+      border-color: var(--accent);
+    }
+    .toolbar-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background-color: var(--sub-bg);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .toolbar-btn:hover {
+      border-color: var(--accent);
+      background-color: var(--accent-soft);
+    }
+    .study-status {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 36px 20px;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .empty-state.visible {
+      display: block;
+    }
+    .topic-list li.search-hidden,
+    .topic-box.search-hidden {
+      display: none;
+    }
+    .topic-list li {
+      position: relative;
+      padding-left: 2px;
+    }
+    .study-check {
+      margin-right: 6px;
+      accent-color: #16a34a;
+      cursor: pointer;
+      vertical-align: middle;
+      opacity: 0.45;
+      transition: opacity 0.15s ease;
+    }
+    .topic-list li:hover .study-check,
+    .study-check:checked {
+      opacity: 1;
+    }
+    .topic-list li.checked-item {
+      color: var(--text-muted);
+    }
+    @media print {
+      body { padding: 0; max-width: 100%; background: #ffffff; }
+      .nav-grid, .study-toolbar, .belt-filter-bar, .study-status, .back-to-top, .study-check, .topic-box-header a, .belt-form-link { display: none !important; }
+      .belt-curriculum-card { box-shadow: none; break-inside: avoid; margin-bottom: 16px; }
+      .belt-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>UMA Taekwondo Notes</h1>
-    <p>Personal notes from Master Tom Malone's curriculum (Medina, MN), cross-referenced with Chang-Hon Tul and Kukkiwon terminology</p>
+    <div>
+      <h1>UMA Taekwondo Notes</h1>
+      <p>Personal notes from Master Tom Malone's curriculum (Medina, MN), cross-referenced with Chang-Hon Tul and Kukkiwon terminology</p>
+    </div>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">Dark Mode</button>
   </header>
 
   <main>
@@ -354,6 +548,18 @@
       <div class="section-title">Curriculum by Belt Level</div>
     </div>
 
+    <div class="study-toolbar">
+      <div class="search-wrap">
+        <input type="text" id="techSearch" class="search-input" placeholder="Search techniques, kicks, forms, grabs... (press /)" aria-label="Search techniques">
+        <button type="button" id="clearSearchBtn" class="search-clear" aria-label="Clear search">&times;</button>
+      </div>
+      <label class="cumulative-label" title="Show all belts up to and including the selected belt">
+        <input type="checkbox" id="cumulativeToggle">
+        Cumulative (through belt)
+      </label>
+      <button type="button" id="printBtn" class="toolbar-btn">Print View</button>
+      <button type="button" id="resetChecksBtn" class="toolbar-btn" style="display:none;">Clear Checkmarks</button>
+    </div>
     <div class="belt-filter-bar" id="beltFilterBar">
       <button type="button" class="belt-pill active" data-belt="all">All Belts</button>
       <button type="button" class="belt-pill" data-belt="white"><span class="pill-dot" style="background:#ffffff;border:1px solid #94a3b8;"></span>White</button>
@@ -370,9 +576,16 @@
       <button type="button" class="belt-pill" data-belt="1st-dan"><span class="pill-dot" style="background:#0f172a;border:1px solid #38bdf8;"></span>1st Dan</button>
     </div>
 
+    <div class="study-status">
+      <span id="studyStatusText">Showing all 12 belt levels</span>
+    </div>
+
+    <div class="empty-state" id="emptySearchState">
+      No techniques matched your search. Press <strong>Esc</strong> or click <strong>&times;</strong> to clear.
+    </div>
     <!-- WHITE BELT -->
     <section class="belt-curriculum-card" id="white" data-belt="white">
-      <div class="belt-banner" style="background-color: #f8fafc;">
+      <div class="belt-banner" style="background-color: var(--sub-bg);">
         <div class="belt-banner-title">
           <span class="belt-swatch" style="background-color:#ffffff; border:1px solid #94a3b8;"></span>
           <h2>White Belt</h2>
@@ -1186,20 +1399,160 @@
 
   <script>
     (function() {
-      const pills = document.querySelectorAll('#beltFilterBar .belt-pill');
-      const cards = document.querySelectorAll('.belt-curriculum-card');
+      const BELT_ORDER = ['white', 'yellow', 'orange', 'green', 'purple', 'blue', 'red', 'brown', 'brown-black', 'half-brown-black', 'black', '1st-dan'];
+      const STORAGE_BELT = 'tkd_selected_belt';
+      const STORAGE_CUMULATIVE = 'tkd_cumulative';
+      const STORAGE_CHECKS = 'tkd_checks';
 
-      function selectBelt(belt, updateHash) {
+      const pills = Array.from(document.querySelectorAll('#beltFilterBar .belt-pill'));
+      const cards = Array.from(document.querySelectorAll('.belt-curriculum-card'));
+      const searchInput = document.getElementById('techSearch');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const cumulativeToggle = document.getElementById('cumulativeToggle');
+      const printBtn = document.getElementById('printBtn');
+      const resetChecksBtn = document.getElementById('resetChecksBtn');
+      const statusEl = document.getElementById('studyStatusText');
+      const emptyEl = document.getElementById('emptySearchState');
+
+      let currentBelt = 'all';
+      let savedChecks = {};
+      try { savedChecks = JSON.parse(localStorage.getItem(STORAGE_CHECKS) || '{}'); } catch (e) {}
+
+      // Add subtle practice checkboxes to every technique <li>
+      function initCheckboxes() {
+        let hasAny = false;
+        cards.forEach(card => {
+          const belt = card.getAttribute('data-belt');
+          const items = card.querySelectorAll('.topic-list > li');
+          items.forEach((li, idx) => {
+            const key = belt + ':' + idx;
+            const cb = document.createElement('input');
+            cb.type = 'checkbox';
+            cb.className = 'study-check';
+            cb.title = 'Mark practiced';
+            cb.checked = !!savedChecks[key];
+            if (cb.checked) {
+              li.classList.add('checked-item');
+              hasAny = true;
+            }
+            cb.addEventListener('change', () => {
+              if (cb.checked) {
+                savedChecks[key] = 1;
+                li.classList.add('checked-item');
+              } else {
+                delete savedChecks[key];
+                li.classList.remove('checked-item');
+              }
+              try { localStorage.setItem(STORAGE_CHECKS, JSON.stringify(savedChecks)); } catch (e) {}
+              updateResetBtn();
+            });
+            li.insertBefore(cb, li.firstChild);
+          });
+        });
+        updateResetBtn();
+      }
+
+      function updateResetBtn() {
+        const count = Object.keys(savedChecks).length;
+        if (resetChecksBtn) {
+          resetChecksBtn.style.display = count > 0 ? 'inline-block' : 'none';
+          resetChecksBtn.textContent = 'Clear Checkmarks (' + count + ')';
+        }
+      }
+
+      function applyView() {
+        const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+        const isCumulative = cumulativeToggle && cumulativeToggle.checked;
+        const selectedIdx = BELT_ORDER.indexOf(currentBelt);
+
+        if (clearSearchBtn) {
+          clearSearchBtn.classList.toggle('visible', query.length > 0);
+        }
+
         pills.forEach(p => {
-          p.classList.toggle('active', p.getAttribute('data-belt') === belt);
+          p.classList.toggle('active', p.getAttribute('data-belt') === currentBelt);
         });
-        cards.forEach(c => {
-          if (belt === 'all' || c.getAttribute('data-belt') === belt) {
-            c.classList.remove('hidden');
-          } else {
-            c.classList.add('hidden');
+
+        let visibleCards = 0;
+        let matchingItems = 0;
+
+        cards.forEach(card => {
+          const belt = card.getAttribute('data-belt');
+          const beltIdx = BELT_ORDER.indexOf(belt);
+
+          // Determine if belt passes the belt/cumulative filter (when searching, search across all belts unless user wants)
+          let beltMatches = true;
+          if (!query) {
+            if (currentBelt !== 'all') {
+              beltMatches = isCumulative ? (beltIdx >= 0 && beltIdx <= selectedIdx) : (belt === currentBelt);
+            }
           }
+
+          if (!beltMatches) {
+            card.classList.add('hidden');
+            return;
+          }
+
+          if (!query) {
+            card.classList.remove('hidden');
+            card.querySelectorAll('.topic-box').forEach(b => b.classList.remove('search-hidden'));
+            card.querySelectorAll('.topic-list > li').forEach(li => li.classList.remove('search-hidden'));
+            visibleCards++;
+            return;
+          }
+
+          // Search mode: filter individual boxes and items
+          const formText = (card.querySelector('.form-summary-box')?.textContent || '').toLowerCase();
+          const beltName = (card.querySelector('h2')?.textContent || '').toLowerCase();
+          const formOrBeltMatch = formText.includes(query) || beltName.includes(query);
+
+          let cardHasMatch = formOrBeltMatch;
+          card.querySelectorAll('.topic-box').forEach(box => {
+            const boxTitle = (box.querySelector('h3')?.textContent || '').toLowerCase();
+            const items = Array.from(box.querySelectorAll('.topic-list > li'));
+            let boxHasMatch = false;
+
+            items.forEach(li => {
+              const hit = formOrBeltMatch || boxTitle.includes(query) || li.textContent.toLowerCase().includes(query);
+              li.classList.toggle('search-hidden', !hit);
+              if (hit) {
+                boxHasMatch = true;
+                matchingItems++;
+              }
+            });
+
+            box.classList.toggle('search-hidden', !boxHasMatch);
+            if (boxHasMatch) cardHasMatch = true;
+          });
+
+          card.classList.toggle('hidden', !cardHasMatch);
+          if (cardHasMatch) visibleCards++;
         });
+
+        if (emptyEl) {
+          emptyEl.classList.toggle('visible', visibleCards === 0);
+        }
+
+        if (statusEl) {
+          if (query) {
+            statusEl.textContent = matchingItems + ' matching items across ' + visibleCards + ' belt' + (visibleCards === 1 ? '' : 's') + ' for "' + searchInput.value.trim() + '"';
+          } else if (currentBelt === 'all') {
+            statusEl.textContent = 'Showing all ' + cards.length + ' belt levels';
+          } else {
+            const activePill = pills.find(p => p.getAttribute('data-belt') === currentBelt);
+            const label = activePill ? activePill.textContent.trim() : currentBelt;
+            statusEl.textContent = isCumulative
+              ? 'Showing White through ' + label + ' (' + visibleCards + ' belt levels)'
+              : 'Showing ' + label;
+          }
+        }
+      }
+
+      function selectBelt(belt, updateHash, savePref) {
+        currentBelt = belt;
+        if (savePref) {
+          try { localStorage.setItem(STORAGE_BELT, belt); } catch (e) {}
+        }
         if (updateHash) {
           if (belt === 'all') {
             history.replaceState(null, '', window.location.pathname);
@@ -1207,26 +1560,79 @@
             history.replaceState(null, '', '#' + belt);
           }
         }
+        applyView();
       }
 
       pills.forEach(pill => {
         pill.addEventListener('click', () => {
-          selectBelt(pill.getAttribute('data-belt'), true);
+          if (searchInput && searchInput.value) searchInput.value = '';
+          selectBelt(pill.getAttribute('data-belt'), true, true);
         });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', applyView);
+      }
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          applyView();
+          searchInput.focus();
+        });
+      }
+      if (cumulativeToggle) {
+        try {
+          cumulativeToggle.checked = localStorage.getItem(STORAGE_CUMULATIVE) === '1';
+        } catch (e) {}
+        cumulativeToggle.addEventListener('change', () => {
+          try { localStorage.setItem(STORAGE_CUMULATIVE, cumulativeToggle.checked ? '1' : '0'); } catch (e) {}
+          applyView();
+        });
+      }
+      if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+      }
+      if (resetChecksBtn) {
+        resetChecksBtn.addEventListener('click', () => {
+          savedChecks = {};
+          try { localStorage.removeItem(STORAGE_CHECKS); } catch (e) {}
+          document.querySelectorAll('.study-check').forEach(cb => { cb.checked = false; });
+          document.querySelectorAll('.topic-list li.checked-item').forEach(li => li.classList.remove('checked-item'));
+          updateResetBtn();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === '/' && document.activeElement !== searchInput && !e.ctrlKey && !e.metaKey) {
+          e.preventDefault();
+          if (searchInput) searchInput.focus();
+        } else if (e.key === 'Escape' && searchInput && searchInput.value) {
+          searchInput.value = '';
+          applyView();
+        }
       });
 
       window.addEventListener('hashchange', () => {
         const h = window.location.hash.replace('#', '') || 'all';
-        if (Array.from(pills).some(p => p.getAttribute('data-belt') === h)) selectBelt(h, false);
+        if (pills.some(p => p.getAttribute('data-belt') === h)) selectBelt(h, false, false);
       });
 
+      initCheckboxes();
+
       const initialHash = window.location.hash.replace('#', '');
-      if (initialHash) {
-        const match = Array.from(pills).find(p => p.getAttribute('data-belt') === initialHash);
-        if (match) {
-          selectBelt(initialHash, false);
-        }
+      let startBelt = 'all';
+      if (initialHash && pills.some(p => p.getAttribute('data-belt') === initialHash)) {
+        startBelt = initialHash;
+      } else {
+        try {
+          const remembered = localStorage.getItem(STORAGE_BELT);
+          if (remembered && pills.some(p => p.getAttribute('data-belt') === remembered)) {
+            startBelt = remembered;
+          }
+        } catch (e) {}
       }
+      selectBelt(startBelt, false, false);
+
       const topBtn = document.getElementById('backToTop');
       if (topBtn) {
         window.addEventListener('scroll', () => {
@@ -1234,6 +1640,29 @@
         }, { passive: true });
         topBtn.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+      const themeBtn = document.getElementById('themeToggle');
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          if (themeBtn) themeBtn.textContent = 'Light Mode';
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+          if (themeBtn) themeBtn.textContent = 'Dark Mode';
+        }
+        try { localStorage.setItem('tkd_theme', theme); } catch (e) {}
+      }
+      try {
+        const savedTheme = localStorage.getItem('tkd_theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          setTheme('dark');
+        }
+      } catch (e) {}
+      if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+          const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          setTheme(isDark ? 'light' : 'dark');
         });
       }
     })();
