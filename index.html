@@ -285,6 +285,34 @@
       font-size: 12px;
       color: var(--text-muted);
     }
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--primary);
+      color: #ffffff;
+      border: 1px solid #334155;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.15s ease;
+      z-index: 30;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -336,7 +364,7 @@
       <button type="button" class="belt-pill" data-belt="blue"><span class="pill-dot" style="background:#60a5fa;"></span>Blue</button>
       <button type="button" class="belt-pill" data-belt="red"><span class="pill-dot" style="background:#f87171;"></span>Red</button>
       <button type="button" class="belt-pill" data-belt="brown"><span class="pill-dot" style="background:#92400e;"></span>Brown</button>
-      <button type="button" class="belt-pill" data-belt="brown-black"><span class="pill-dot" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%);"></span>Brown-Black</button>
+      <button type="button" class="belt-pill" data-belt="brown-black"><span class="pill-dot" style="background:linear-gradient(180deg,#92400e 32%,#0f172a 32%,#0f172a 68%,#92400e 68%);"></span>Brown-Black</button>
       <button type="button" class="belt-pill" data-belt="half-brown-black"><span class="pill-dot" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%);border:1px solid #0f172a;"></span>Half Brown / Half Black</button>
       <button type="button" class="belt-pill" data-belt="black"><span class="pill-dot" style="background:#0f172a;"></span>Black</button>
       <button type="button" class="belt-pill" data-belt="1st-dan"><span class="pill-dot" style="background:#0f172a;border:1px solid #38bdf8;"></span>1st Dan</button>
@@ -533,9 +561,9 @@
               <a href="grab-defenses/index.html#orange">Full Details &rarr;</a>
             </div>
             <ol class="topic-list">
-              <li><strong>Front Bearhug (Arms Free):</strong> Double ear slap (Demonstrate Only - No Live Contact), grab hair/head, knee strike to groin.</li>
-              <li><strong>Front Bearhug (Arms Pinned):</strong> Headbutt (Demonstrate Only - No Live Contact), stomp on instep, drop weight, flare elbows, and hip strike.</li>
-              <li><strong>Rear Bearhug (Arms Free):</strong> Headbutt rearward (Demonstrate Only - No Live Contact), heel stomp to instep, reach behind knee to lift leg for takedown.</li>
+              <li><strong>Front Bearhug (Arms Free):</strong> Double ear slap, grab hair/head, knee strike to groin.</li>
+              <li><strong>Front Bearhug (Arms Pinned):</strong> Headbutt, stomp on instep, drop weight, flare elbows, and hip strike.</li>
+              <li><strong>Rear Bearhug (Arms Free):</strong> Headbutt rearward, heel stomp to instep, reach behind knee to lift leg for takedown.</li>
             </ol>
           </div>
         </div>
@@ -982,15 +1010,51 @@
         <div class="topic-columns">
           <div class="topic-box">
             <div class="topic-box-header">
-              <h3>Carry-Over Requirements (From Brown-Black)</h3>
-              <a href="#brown-black" onclick="document.querySelector('[data-belt=brown-black]').click();document.getElementById('beltFilterBar').scrollIntoView({behavior:'smooth'});return false;">View Brown-Black &rarr;</a>
+              <h3>Hand &amp; Blocking (Carry-Over)</h3>
+              <a href="blocking-routines/index.html#brown-black">Full Details &rarr;</a>
             </div>
-            <ul class="topic-list">
-              <li><strong>Hand &amp; Blocking:</strong> Same as Brown Belt Black Stripe (<a href="blocking-routines/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
-              <li><strong>Kicking:</strong> Same 4 routines as Brown Belt Black Stripe (<a href="kicking-routines/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
-              <li><strong>One-Step Sparring:</strong> Same as Brown Belt Black Stripe (<a href="one-steps/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
-              <li><strong>Grab Defenses:</strong> Same as Brown Belt Black Stripe (<a href="grab-defenses/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
-            </ul>
+            <ol class="topic-list">
+              <li>Twin knife hand guarding block, step forward inverted chop at neck level while other hand is over forehead</li>
+              <li>Back stance low block, fold hands by ear, grab neck and knee</li>
+              <li>Twin stick block, jump spin knife hand guarding block</li>
+              <li>Augmented block in front stance, pivot on left foot, move to horse riding stance and right inside block, back fist with right hand</li>
+              <li>Stepping forward double palm strike</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking (Carry-Over)</h3>
+              <a href="kicking-routines/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>360 push knee up round</li>
+              <li>Hip buster jump hook</li>
+              <li>Front kick then jump round</li>
+              <li>Inside-out, outside-in</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring (Carry-Over)</h3>
+              <a href="one-steps/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Front kick low, round kick high, opposite leg for each, kick simultaneously (both sides).</li>
+              <li>Inside-out crescent kick, opposite leg outside-in crescent kick, double punch (both sides).</li>
+              <li>Jump up hook kick.</li>
+              <li>Hand up in X-block (right hand on top), left foot step out, right leg side kick, armpit, then knee, behind knee for takedown.</li>
+              <li>Hands held behind head (knife hands), step back to back stance, knife hand guarding block low, 360 degree side kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses (Carry-Over)</h3>
+              <a href="grab-defenses/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Knife block, grab wrist, slide leg to sweep and push.</li>
+              <li>Knife block breaking.</li>
+            </ol>
           </div>
         </div>
       </div>
@@ -1075,13 +1139,13 @@
           <span class="belt-swatch" style="background-color:#0f172a; border:1px solid #38bdf8;"></span>
           <h2>1st Dan Black Belt</h2>
         </div>
-        <a href="forms/10-kwang-gae.html" class="belt-form-link">Form #10: Kwang-Gae (39 Movements) &rarr;</a>
+        <a href="advanced-forms/index.html" class="belt-form-link">Advanced Forms: Po-Eun &amp; Ge-Baek &rarr;</a>
       </div>
       <div class="belt-body">
         <div class="form-summary-box">
-          <strong><a href="forms/10-kwang-gae.html">Form #10: Kwang-Gae (광개)</a></strong> &bull; <a href="advanced-forms/index.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Po-Eun (36) &amp; Ge-Baek (44)</a>
-          <div class="form-meta-line">Kwang-Gae: 39 Movements &bull; Parallel Stance with Heaven Hand (Hanulson) &bull; Chang-Hon Tul</div>
-          Named after Gwanggaeto the Great, 19th King of the Goguryeo Dynasty (391 AD). The diagram 土 (Earth) represents the expansion and recovery of lost territory. Po-Eun (P0514) and Ge-Baek (P0515) complete the 1st Dan Chang-Hon triad.
+          <strong><a href="advanced-forms/index.html">Po-Eun (36) &amp; Ge-Baek (44)</a></strong> &bull; <a href="forms/10-kwang-gae.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Kwang-Gae (39)</a>
+          <div class="form-meta-line">Chang-Hon 1st Dan Triad &bull; Parallel Ready Stance</div>
+          Po-Eun (36 movements, Notes P0514) and Ge-Baek (44 movements, Notes P0515) complete the 1st Dan Chang-Hon triad alongside Kwang-Gae (covered at Half Brown / Half Black).
         </div>
         <div class="topic-columns">
           <div class="topic-box">
@@ -1113,6 +1177,8 @@
       </div>
     </section>
   </main>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">&uarr; Top</button>
 
   <footer>
     <p>UMA Taekwondo Notes</p>
@@ -1160,6 +1226,15 @@
         if (match) {
           selectBelt(initialHash, false);
         }
+      }
+      const topBtn = document.getElementById('backToTop');
+      if (topBtn) {
+        window.addEventListener('scroll', () => {
+          topBtn.classList.toggle('visible', window.scrollY > 350);
+        }, { passive: true });
+        topBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
       }
     })();
   </script>
