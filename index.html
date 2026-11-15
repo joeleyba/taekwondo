@@ -143,6 +143,7 @@
     }
 
     .belt-curriculum-card {
+      scroll-margin-top: 16px;
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 10px;
@@ -223,7 +224,7 @@
 
     .topic-columns {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 16px;
     }
     .topic-box {
@@ -982,7 +983,7 @@
           <div class="topic-box">
             <div class="topic-box-header">
               <h3>Carry-Over Requirements (From Brown-Black)</h3>
-              <a href="#brown-black" onclick="document.querySelector('[data-belt=brown-black]').click();return false;">View Brown-Black &rarr;</a>
+              <a href="#brown-black" onclick="document.querySelector('[data-belt=brown-black]').click();document.getElementById('beltFilterBar').scrollIntoView({behavior:'smooth'});return false;">View Brown-Black &rarr;</a>
             </div>
             <ul class="topic-list">
               <li><strong>Hand &amp; Blocking:</strong> Same as Brown Belt Black Stripe (<a href="blocking-routines/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
@@ -1146,6 +1147,11 @@
         pill.addEventListener('click', () => {
           selectBelt(pill.getAttribute('data-belt'), true);
         });
+      });
+
+      window.addEventListener('hashchange', () => {
+        const h = window.location.hash.replace('#', '') || 'all';
+        if (Array.from(pills).some(p => p.getAttribute('data-belt') === h)) selectBelt(h, false);
       });
 
       const initialHash = window.location.hash.replace('#', '');
