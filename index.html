@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UMA Taekwondo Notes</title>
-  <meta name="description" content="Personal Taekwondo notes from Master Tom Malone's UMA curriculum. Covers forms, one-steps, kicking, hand blocks, grab releases, and black belt curriculum.">
+  <meta name="description" content="Personal Taekwondo notes from Master Tom Malone's UMA curriculum. Organized by belt level and topic: forms, hand blocks, kicking, one-steps, grab releases, and breaking.">
   <link rel="canonical" href="https://www.joeleyba.com/taekwondo/index.html">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.joeleyba.com/taekwondo/index.html">
   <meta property="og:title" content="UMA Taekwondo Notes">
-  <meta property="og:description" content="Personal Taekwondo notes from Master Tom Malone's UMA curriculum.">
+  <meta property="og:description" content="Personal Taekwondo notes from Master Tom Malone's UMA curriculum, organized by belt level and topic.">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -30,7 +30,7 @@
       background-color: var(--bg);
       color: var(--text);
       padding: 30px 20px;
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
       line-height: 1.5;
     }
@@ -51,23 +51,11 @@
       margin-top: 4px;
     }
 
-    .disclaimer-banner {
-      background-color: #f8fafc;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--accent);
-      border-radius: 6px;
-      padding: 14px 16px;
-      margin-bottom: 24px;
-      font-size: 13px;
-      color: #334155;
-      line-height: 1.5;
-    }
-
     .nav-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
     .nav-card {
       background-color: var(--card-bg);
@@ -95,114 +83,198 @@
       color: var(--text-muted);
     }
 
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
     .section-title {
       font-size: 20px;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 16px;
-      padding-bottom: 6px;
-      border-bottom: 2px solid var(--primary);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      padding-left: 10px;
+      border-left: 4px solid var(--accent);
     }
 
-    .forms-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 16px;
-      margin-bottom: 30px;
-    }
-    .form-card {
+    .belt-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 12px;
       background-color: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 16px;
-      text-decoration: none;
+    }
+    .belt-pill {
+      appearance: none;
+      border: 1px solid var(--border);
+      background-color: #f8fafc;
       color: var(--text);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       transition: all 0.15s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
-    .form-card:hover {
+    .belt-pill:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      background-color: #f0f9ff;
     }
-    .form-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 8px;
-    }
-    .form-card-title {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--primary);
-    }
-    .form-card-korean {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-left: 4px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .form-card-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-      line-height: 1.4;
-    }
-    .form-card-desc {
-      font-size: 12.5px;
-      color: #334155;
-      line-height: 1.45;
-    }
-
-    .readiness-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    .readiness-card h3 {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    .readiness-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin-top: 10px;
-    }
-    .readiness-table th {
+    .belt-pill.active {
       background-color: var(--primary);
       color: #ffffff;
-      padding: 8px 10px;
-      text-align: left;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      border-color: var(--primary);
     }
-    .readiness-table td {
-      padding: 7px 10px;
+    .pill-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .belt-curriculum-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 22px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .belt-curriculum-card.hidden {
+      display: none;
+    }
+    .belt-banner {
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
       border-bottom: 1px solid var(--border);
     }
-    .readiness-table tr:hover { background-color: #f8fafc; }
+    .belt-banner-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .belt-banner-title h2 {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0;
+    }
+    .belt-swatch {
+      width: 26px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+    .belt-form-link {
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--accent);
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .belt-form-link:hover {
+      border-color: var(--accent);
+      background-color: #f0f9ff;
+    }
+
+    .belt-body {
+      padding: 18px 20px;
+    }
+    .form-summary-box {
+      background-color: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #334155;
+    }
+    .form-summary-box strong a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .form-summary-box strong a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .form-meta-line {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 2px 0 6px 0;
+    }
+
+    .topic-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .topic-box {
+      background-color: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .topic-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .topic-box-header h3 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .topic-box-header a {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .topic-box-header a:hover {
+      text-decoration: underline;
+    }
+    .topic-list {
+      margin-left: 18px;
+      font-size: 13px;
+      color: #334155;
+    }
+    .topic-list li {
+      margin-bottom: 5px;
+    }
+    .topic-list ul {
+      margin-left: 16px;
+      margin-top: 4px;
+    }
+    .sub-heading {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
 
     footer {
       text-align: center;
@@ -222,10 +294,9 @@
   </header>
 
   <main>
-
     <div class="nav-grid">
       <a href="blocking-routines/index.html" class="nav-card">
-        <strong>Hand & Blocking Routines</strong>
+        <strong>Hand &amp; Blocking Routines</strong>
         <span>Belt-by-belt hand fundamentals</span>
       </a>
       <a href="one-steps/index.html" class="nav-card">
@@ -233,253 +304,859 @@
         <span>White Belt through Black Belt routines</span>
       </a>
       <a href="kicking-routines/index.html" class="nav-card">
-        <strong>Kicking & Breaking</strong>
-        <span>Progressions, counters & Kyokpa</span>
+        <strong>Kicking &amp; Breaking</strong>
+        <span>Progressions, counters &amp; Kyokpa</span>
       </a>
       <a href="grab-defenses/index.html" class="nav-card">
-        <strong>Grab Defenses & Acupoints</strong>
-        <span>Releases, weapons & proposed WHO codes</span>
+        <strong>Grab Defenses &amp; Acupoints</strong>
+        <span>Releases, weapons &amp; WHO codes</span>
       </a>
       <a href="theory-and-terminology/index.html" class="nav-card">
-        <strong>Theory & Stances</strong>
-        <span>Tenets, student oath & stance geometry</span>
+        <strong>Theory &amp; Stances</strong>
+        <span>Tenets, student oath &amp; stance geometry</span>
       </a>
       <a href="advanced-forms/index.html" class="nav-card">
-        <strong>Advanced Black Belt Forms</strong>
-        <span>1st Dan to 3rd Dan & bibliography</span>
+        <strong>Advanced Forms</strong>
+        <span>Po-Eun, Ge-Baek, Peong-Hwa &amp; 2nd Dan</span>
       </a>
     </div>
 
-    <div class="section-title">
-      <span>Forms Curriculum (Study Sequence)</span>
-      <span style="font-size:12px; font-weight:600; color:var(--text-muted);">Chang-Hon Tul (1–10) & Kukkiwon Poomsae (11)</span>
+    <div class="section-header">
+      <div class="section-title">Curriculum by Belt Level</div>
     </div>
 
-    <div class="forms-grid">
-      <a href="forms/01-chon-ji.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">1. Chon-Ji</span>
-              <span class="form-card-korean">천지</span>
-            </div>
-            <span class="badge" style="background-color:#ffffff; color:#0f172a; border:1px solid #cbd5e1;">White</span>
-          </div>
-          <div class="form-card-meta">19 Moves &bull; Parallel Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Literally means "Heaven and Earth". Interpreted in the Orient as the creation of the world or the beginning of human history, performed by the beginner.</p>
-        </div>
-      </a>
-
-      <a href="forms/02-dan-gun.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">2. Dan-Gun</span>
-              <span class="form-card-korean">단군</span>
-            </div>
-            <span class="badge" style="background-color:#fef08a; color:#713f12;">Yellow</span>
-          </div>
-          <div class="form-card-meta">21 Moves &bull; Parallel Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Named after Dangun Wanggeom, the legendary founder of Gojoseon according to Korean foundational tradition (dated to 2333 BCE).</p>
-        </div>
-      </a>
-
-      <a href="forms/03-do-san.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">3. Do-San</span>
-              <span class="form-card-korean">도산</span>
-            </div>
-            <span class="badge" style="background-color:#ffedd5; color:#9a3412;">Orange</span>
-          </div>
-          <div class="form-card-meta">24 Moves &bull; Parallel Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Pen name of Korean patriot and educator Ahn Chang-Ho (1878–1938). The 24 movements represent his entire life devoted to furthering Korean education and independence.</p>
-        </div>
-      </a>
-
-      <a href="forms/04-won-hyo.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">4. Won-Hyo</span>
-              <span class="form-card-korean">원효</span>
-            </div>
-            <span class="badge" style="background-color:#dcfce7; color:#14532d;">Green</span>
-          </div>
-          <div class="form-card-meta">28 Moves &bull; Closed Ready Stance A &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Wonhyo was an influential Korean Buddhist monk and scholar who lived from 617 to 686 AD. He helped popularize Buddhism, including Pure Land teachings, in Silla.</p>
-        </div>
-      </a>
-
-      <a href="forms/05-yul-gok.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">5. Yul-Gok</span>
-              <span class="form-card-korean">율곡</span>
-            </div>
-            <span class="badge" style="background-color:#f3e8ff; color:#581c87;">Purple</span>
-          </div>
-          <div class="form-card-meta">38 Moves &bull; Parallel Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Pen name of philosopher Yi I (1536–1584), nicknamed the 'Confucius of Korea'. The 38 movements refer to his birthplace near the 38th parallel; diagram represents the scholar (士).</p>
-        </div>
-      </a>
-
-      <a href="forms/06-joong-gun.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">6. Joong-Gun</span>
-              <span class="form-card-korean">중근</span>
-            </div>
-            <span class="badge" style="background-color:#dbeafe; color:#1e3a8a;">Blue</span>
-          </div>
-          <div class="form-card-meta">32 Moves &bull; Closed Ready Stance B &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Named after Korean patriot An Jung-geun (1879–1910). The 32 movements represent his age under traditional Korean age counting when executed in 1910.</p>
-        </div>
-      </a>
-
-      <a href="forms/07-toi-gye.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">7. Toi-Gye</span>
-              <span class="form-card-korean">퇴계</span>
-            </div>
-            <span class="badge" style="background-color:#fee2e2; color:#991b1b;">Red</span>
-          </div>
-          <div class="form-card-meta">37 Moves &bull; Closed Ready Stance B &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Pen name of Neo-Confucian scholar Yi Hwang (1501–1570). The 37 movements refer to his birthplace near the 37th parallel, and the diagram represents the scholar (士).</p>
-        </div>
-      </a>
-
-      <a href="forms/08-hwa-rang.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">8. Hwa-Rang</span>
-              <span class="form-card-korean">화랑</span>
-            </div>
-            <span class="badge" style="background-color:#fef3c7; color:#78350f;">Brown</span>
-          </div>
-          <div class="form-card-meta">29 Moves &bull; Closed Ready Stance C &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Named after the Hwa-Rang youth organization of the Silla Kingdom. The 29 movements refer to the 29th Infantry Division where Taekwon-Do developed into maturity.</p>
-        </div>
-      </a>
-
-      <a href="forms/09-choong-moo.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">9. Choong-Moo</span>
-              <span class="form-card-korean">충무</span>
-            </div>
-            <span class="badge" style="background-color:#78350f; color:#ffffff;">Brown/Black</span>
-          </div>
-          <div class="form-card-meta">30 Moves &bull; Parallel Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Posthumous title of Admiral Yi Sun-sin of the Joseon Dynasty, famed for deploying the armored turtle ship (Geobukseon) in 1592. Ends with a left-hand attack symbolizing his untimely death.</p>
-        </div>
-      </a>
-
-      <a href="forms/10-kwang-gae.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">10. Kwang-Gae</span>
-              <span class="form-card-korean">광개</span>
-            </div>
-            <span class="badge" style="background-color:#0f172a; color:#ffffff;">1st Dan</span>
-          </div>
-          <div class="form-card-meta">39 Moves &bull; Heaven Hand Ready Stance &bull; Lineage: Chang-Hon Tul</div>
-          <p class="form-card-desc">Named after Gwanggaeto the Great of Goguryeo, who ascended the throne in 391 AD and expanded Goguryeo territory. The 39 movements refer to 391, and the diagram traces the character 土 (Earth), representing the expansion and recovery of lost territory.</p>
-        </div>
-      </a>
-
-      <a href="forms/11-koryo.html" class="form-card">
-        <div>
-          <div class="form-card-header">
-            <div>
-              <span class="form-card-title">11. Koryo Poomsae</span>
-              <span class="form-card-korean">고려 품새</span>
-            </div>
-            <span class="badge" style="background-color:#0f172a; color:#ffffff; border:1px solid #38bdf8;">Kukkiwon</span>
-          </div>
-          <div class="form-card-meta">30 Poom &bull; Tongmilgi Ready Posture &bull; Lineage: Kukkiwon Yudanja</div>
-          <p class="form-card-desc">Represents the seonbae (learned scholar of upright martial spirit) through Goguryeo, Balhae, and Goryeo. Floor pattern traces the Chinese character 士 (scholar).</p>
-        </div>
-      </a>
+    <div class="belt-filter-bar" id="beltFilterBar">
+      <button type="button" class="belt-pill active" data-belt="all">All Belts</button>
+      <button type="button" class="belt-pill" data-belt="white"><span class="pill-dot" style="background:#ffffff;border:1px solid #94a3b8;"></span>White</button>
+      <button type="button" class="belt-pill" data-belt="yellow"><span class="pill-dot" style="background:#facc15;"></span>Yellow</button>
+      <button type="button" class="belt-pill" data-belt="orange"><span class="pill-dot" style="background:#fb923c;"></span>Orange</button>
+      <button type="button" class="belt-pill" data-belt="green"><span class="pill-dot" style="background:#4ade80;"></span>Green</button>
+      <button type="button" class="belt-pill" data-belt="purple"><span class="pill-dot" style="background:#c084fc;"></span>Purple</button>
+      <button type="button" class="belt-pill" data-belt="blue"><span class="pill-dot" style="background:#60a5fa;"></span>Blue</button>
+      <button type="button" class="belt-pill" data-belt="red"><span class="pill-dot" style="background:#f87171;"></span>Red</button>
+      <button type="button" class="belt-pill" data-belt="brown"><span class="pill-dot" style="background:#92400e;"></span>Brown</button>
+      <button type="button" class="belt-pill" data-belt="brown-black"><span class="pill-dot" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%);"></span>Brown-Black</button>
+      <button type="button" class="belt-pill" data-belt="half-brown-black"><span class="pill-dot" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%);border:1px solid #0f172a;"></span>Half Brown / Half Black</button>
+      <button type="button" class="belt-pill" data-belt="black"><span class="pill-dot" style="background:#0f172a;"></span>Black</button>
+      <button type="button" class="belt-pill" data-belt="1st-dan"><span class="pill-dot" style="background:#0f172a;border:1px solid #38bdf8;"></span>1st Dan</button>
     </div>
 
-    <section class="readiness-card">
-      <h3>Curriculum Overview</h3>
-      <table class="readiness-table">
-        <thead>
-          <tr>
-            <th>Curriculum Area</th>
-            <th>Notes Coverage</th>
-            <th>Site Location</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Hand & Blocking Routines</strong></td>
-            <td>Belt-specific routines White through Black (Notes P0071–P0437)</td>
-            <td>Hand &amp; Blocking Routines</td>
-          </tr>
-          <tr>
-            <td><strong>Kicking Progressions</strong></td>
-            <td>Belt-specific combinations White through Black (Notes P0077–P0442)</td>
-            <td>Kicking &amp; Breaking</td>
-          </tr>
-          <tr>
-            <td><strong>Color-Belt Forms (1–9)</strong></td>
-            <td>Chon-Ji through Choong-Moo (Notes P0094–P0425)</td>
-            <td>Color-Belt Forms (sequence &amp; memory anchors)</td>
-          </tr>
-          <tr>
-            <td><strong>Black Belt Forms</strong></td>
-            <td>Koryo & Peong-Hwa under Black Belt; Kwang-Gae, Po-Eun, Ge-Baek under 1st Dan</td>
-            <td>Kwang-Gae &amp; Koryo sheets; Advanced Forms</td>
-          </tr>
-          <tr>
-            <td><strong>One-Step Sparring</strong></td>
-            <td>White through Brown-Black routines; 1st Dan takedowns</td>
-            <td>One-Step Sparring</td>
-          </tr>
-          <tr>
-            <td><strong>Three-Step Sparring</strong></td>
-            <td>4 routines under Black Belt (Notes P0449–P0453)</td>
-            <td>One-Step Sparring</td>
-          </tr>
-          <tr>
-            <td><strong>Grab Defenses & Acupoints</strong></td>
-            <td>White through Brown releases; Black Belt Hapkido; 9 Vital Points (Kupso)</td>
-            <td>Grab Defenses &amp; Acupoints</td>
-          </tr>
-          <tr>
-            <td><strong>Breaking (Kyokpa)</strong></td>
-            <td>Brown (1 brick), Brown-Black (2 boards), Black (1 brick), 1st Dan testing (1 brick, boards)</td>
-            <td>Kicking &amp; Breaking</td>
-          </tr>
-          <tr>
-            <td><strong>Free Sparring (Gyeorugi)</strong></td>
-            <td>Listed under Red Stripe ("Red — Sparring")</td>
-            <td>Theory &amp; Stances</td>
-          </tr>
-          <tr>
-            <td><strong>Conditioning & Flexibility</strong></td>
-            <td>Listed under Brown Stripe ("Brown — Endurance": pushups, punches, kicks, crunches)</td>
-            <td>Theory &amp; Stances</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- WHITE BELT -->
+    <section class="belt-curriculum-card" id="white" data-belt="white">
+      <div class="belt-banner" style="background-color: #f8fafc;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#ffffff; border:1px solid #94a3b8;"></span>
+          <h2>White Belt</h2>
+        </div>
+        <a href="forms/01-chon-ji.html" class="belt-form-link">Form #1: Chon-Ji (19 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/01-chon-ji.html">Form #1: Chon-Ji (천지)</a></strong>
+          <div class="form-meta-line">19 Movements &bull; Parallel Ready Stance (Narani Junbi Sogi)</div>
+          Literally "Heaven and Earth", symbolizing the creation of the world and beginning of human history. Two similar parts: the first represents Heaven, the second Earth.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#white">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Down block (Low outer forearm block)</li>
+              <li>Rising block (High outer forearm rising block)</li>
+              <li>Outer forearm block</li>
+              <li>Inner forearm block</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#white">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Slide back leg front kick</li>
+              <li>Front leg front kick</li>
+              <li>Back leg front kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#white">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Rising block, reverse punch.</li>
+              <li>Horse riding stance, push block, low, middle, high punch.</li>
+              <li>Inner forearm block, back leg front kick.</li>
+              <li>Grab wrist, back leg roundhouse kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#white">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Same-Side Wrist Grab:</strong> Rotate wrist toward attacker's thumb, step back, and pull to hip.</li>
+              <li><strong>Cross Wrist Grab:</strong> Reach over with opposite hand, peel thumb, step back, and strike.</li>
+              <li><strong>Two-Hand on One Wrist:</strong> Form fist, grab fist with free hand, pull upward between attacker's thumbs.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- YELLOW BELT -->
+    <section class="belt-curriculum-card" id="yellow" data-belt="yellow">
+      <div class="belt-banner" style="background-color: #fefce8;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#facc15; border:1px solid #eab308;"></span>
+          <h2>Yellow Belt</h2>
+        </div>
+        <a href="forms/02-dan-gun.html" class="belt-form-link">Form #2: Dan-Gun (21 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/02-dan-gun.html">Form #2: Dan-Gun (단군)</a></strong>
+          <div class="form-meta-line">21 Movements &bull; Parallel Ready Stance</div>
+          Named after holy Dan-Gun, the legendary founder of Korea in 2333 B.C. Introduces knife-hand guarding blocks, twin forearm blocks, and high section punches.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#yellow">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Down block, double punch</li>
+              <li>Rising block, double punch</li>
+              <li>Knife hand guarding block</li>
+              <li>Twin forearm block</li>
+              <li>Knife hand strike</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#yellow">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Slide back leg roundhouse kick</li>
+              <li>Front leg roundhouse kick</li>
+              <li>Back leg roundhouse kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#yellow">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Outer block, grab wrist, back leg front kick, elbow strike.</li>
+              <li><strong>"Pizza Man":</strong> Step forward to inside (horse riding stance), knife hand strike and knife hand block at the same time.</li>
+              <li>Side kick, knife hand strike to neck.</li>
+              <li>Arm up, step forward to inside (horse riding stance), reverse inner forearm block slapping chest at same time, left hand grab wrist, right hand knife hand strike to neck, reach behind head and pull forward, right knee to stomach.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#yellow">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Two-Hand Front Lapel Grab:</strong> Double upward forearm strike between arms, followed by double palm heel strike to ribs.</li>
+              <li><strong>One-Hand Lapel Grab:</strong> Pin hand with opposite palm, rotate wrist into figure-four lock, step back into lock.</li>
+              <li><strong>Rear Wrist Grabs:</strong> Step back behind attacker's lead foot, rotate arm upward, and counter with back kick.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORANGE BELT -->
+    <section class="belt-curriculum-card" id="orange" data-belt="orange">
+      <div class="belt-banner" style="background-color: #fff7ed;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#fb923c; border:1px solid #ea580c;"></span>
+          <h2>Orange Belt</h2>
+        </div>
+        <a href="forms/03-do-san.html" class="belt-form-link">Form #3: Do-San (24 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/03-do-san.html">Form #3: Do-San (도산)</a></strong>
+          <div class="form-meta-line">24 Movements &bull; Parallel Ready Stance</div>
+          Pseudonym of patriot Ahn Chang-Ho (1876-1938). The 24 movements represent his entire life devoted to furthering education and the Korean independence movement.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#orange">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Down block, rising block, double punch</li>
+              <li>Rising block, down block, double punch</li>
+              <li>Knife hand guarding block, double punch</li>
+              <li>Twin forearm block, point, punch</li>
+              <li>Knife hand strike, punch</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#orange">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Slide back leg side kick</li>
+              <li>Front leg side kick</li>
+              <li>Back leg side kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#orange">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>X-block, grab and twist wrist, round kick to the midsection, sweep with same leg, punch as opponent falls.</li>
+              <li>Inside-out crescent kick, opposite leg low and high round kicks.</li>
+              <li>Jump front kick, landing with outer forearm block and punch at the same time.</li>
+              <li>Step forward to outside (horse riding stance), push block, punch, inside-out crescent kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#orange">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Front Bearhug (Arms Free):</strong> Double ear slap (Demonstrate Only - No Live Contact), grab hair/head, knee strike to groin.</li>
+              <li><strong>Front Bearhug (Arms Pinned):</strong> Headbutt (Demonstrate Only - No Live Contact), stomp on instep, drop weight, flare elbows, and hip strike.</li>
+              <li><strong>Rear Bearhug (Arms Free):</strong> Headbutt rearward (Demonstrate Only - No Live Contact), heel stomp to instep, reach behind knee to lift leg for takedown.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GREEN BELT -->
+    <section class="belt-curriculum-card" id="green" data-belt="green">
+      <div class="belt-banner" style="background-color: #f0fdf4;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#4ade80; border:1px solid #16a34a;"></span>
+          <h2>Green Belt</h2>
+        </div>
+        <a href="forms/04-won-hyo.html" class="belt-form-link">Form #4: Won-Hyo (28 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/04-won-hyo.html">Form #4: Won-Hyo (원효)</a></strong>
+          <div class="form-meta-line">28 Movements &bull; Closed Ready Stance A (Moa Junbi Sogi A)</div>
+          Named after the noted monk Won-Hyo, who introduced Buddhism to the Silla Dynasty in 686 A.D. Introduces circular blocks, fixed stances, and bending ready stances.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#green">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Twin forearm block, sliding to cat stance, reverse knife hand strike, point, punch</li>
+              <li>Moving forward circle block, reverse punch</li>
+              <li>Knife hand guarding block, down block, reverse punch</li>
+              <li>Circle block, same hand knife hand strike, step forward reverse knife hand strike to neck</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#green">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Slide back leg hook kick</li>
+              <li>Front leg hook kick</li>
+              <li>Spin heel kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#green">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Outside-in crescent kick, opposite leg spin heel kick (both sides).</li>
+              <li>Outside-in crescent kick, same leg side kick without touching ground (both sides).</li>
+              <li>Step forward to inside (horse riding stance), left arm outer forearm block and right elbow to temple, both hands grab behind head, headbutt, left leg round knee to ribs.</li>
+              <li>Step forward to outside (horse riding stance), left arm outer forearm block, left hand reaches behind head, right elbow strike to temple, slide left hand down in front of shoulder and punch with hand, pull with left leg, takedown, right leg round kick on ground.</li>
+              <li>Open hand by ear, step out to side, same time circle down punch block, opposite ridge hand to head.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#green">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Front Two-Hand Choke:</strong> Bring right arm up, turn body 90° to the left, smash arm downward across attacker's forearms, follow with reverse punch.</li>
+              <li><strong>Rear Two-Hand Choke:</strong> Turn 180° raising lead arm over attacker's arms, elbow strike to ribs.</li>
+              <li><strong>Side Headlock:</strong> Reach over attacker's face, push nose/chin backward to break posture, strike groin.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PURPLE BELT -->
+    <section class="belt-curriculum-card" id="purple" data-belt="purple">
+      <div class="belt-banner" style="background-color: #faf5ff;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#c084fc; border:1px solid #9333ea;"></span>
+          <h2>Purple Belt</h2>
+        </div>
+        <a href="forms/05-yul-gok.html" class="belt-form-link">Form #5: Yul-Gok (38 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/05-yul-gok.html">Form #5: Yul-Gok (율곡)</a></strong>
+          <div class="form-meta-line">38 Movements &bull; Parallel Ready Stance</div>
+          Pseudonym of scholar Yi I (1536-1584), nicknamed the "Confucius of Korea". The 38 movements refer to his birthplace on the 38th latitude, and the diagram represents "scholar".
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#purple">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Outer forearm block, knife hand guarding block, reverse punch</li>
+              <li>Search block, opposite hand search block, then punch</li>
+              <li>Outer forearm block, front stance punch</li>
+              <li>Twin knife hand block, step forward spear finger</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#purple">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Jump front kick</li>
+              <li>Jump side kick</li>
+              <li>Jump roundhouse kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#purple">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Hook kick, same leg round kick, opposite leg spin heel kick.</li>
+              <li>Jump up round kick (both sides).</li>
+              <li>Inner block, backfist, elbow.</li>
+              <li>Inner block, elbow, step back, chop to neck.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#purple">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Rear Choke / Sleeper Hold:</strong> Turn chin into elbow crook to protect airway, grab attacker's elbow and wrist, drop weight and execute shoulder throw.</li>
+              <li><strong>Two-Hand Front Hair Grab:</strong> Pin attacker's hands to head with both palms, step backward bowing forward to hyperextend attacker's wrists.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLUE BELT -->
+    <section class="belt-curriculum-card" id="blue" data-belt="blue">
+      <div class="belt-banner" style="background-color: #eff6ff;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#60a5fa; border:1px solid #2563eb;"></span>
+          <h2>Blue Belt</h2>
+        </div>
+        <a href="forms/06-joong-gun.html" class="belt-form-link">Form #6: Joong-Gun (32 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/06-joong-gun.html">Form #6: Joong-Gun (중근)</a></strong>
+          <div class="form-meta-line">32 Movements &bull; Closed Ready Stance B (Moa Junbi Sogi B)</div>
+          Named after patriot Ahn Joong-Gun, who assassinated Hiro-Bumi Ito. The 32 movements stand for Mr. Ahn's age when he was executed at Lui-Shung prison (1910).
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking (From Form)</h3>
+              <a href="blocking-routines/index.html#blue">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Reverse knife hand block, front leg front kick, stepping forward rising palm heel strike in a cat stance</li>
+              <li>Knife hand guarding block, shifting into a front stance, right elbow</li>
+              <li>Twin high punch, stepping forward, twin upset punch</li>
+              <li>Augmented block in a front stance, shift to horse riding stance, pull back punch, move forward and side kick</li>
+              <li>Move to a fighting stance, shift to a front stance and execute pressing palm blocks</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking</h3>
+              <a href="kicking-routines/index.html#blue">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Jump spin crescent kick</li>
+              <li>Jump spin side kick</li>
+              <li>Jump spin hook kick</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#blue">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Inner Block - Back Fist - Elbow - Spin - Elbow.</li>
+              <li>Drop down on left knee, hands on floor, right leg round kick to body, immediately hook behind forward leg and sweep to ground, left hand reverse punch while on knee.</li>
+              <li>Step back to front stance, X-block, fold right hand over opponent's wrist in clockwise manner, right leg front kick to face, elbow to spine.</li>
+              <li>Brush Block - Double Round Kick - Jump Spin Crescent Kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#blue">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Side Shoulder Grab:</strong> Pin hand, step in, strike armpit, execute reverse wrist lock takedown.</li>
+              <li><strong>Full Nelson Defense:</strong> Drop weight into horse stance, shoot arms upward, reach behind attacker's head/neck, forward flip throw.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RED BELT -->
+    <section class="belt-curriculum-card" id="red" data-belt="red">
+      <div class="belt-banner" style="background-color: #fef2f2;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#f87171; border:1px solid #dc2626;"></span>
+          <h2>Red Belt</h2>
+        </div>
+        <a href="forms/07-toi-gye.html" class="belt-form-link">Form #7: Toi-Gye (37 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/07-toi-gye.html">Form #7: Toi-Gye (퇴계)</a></strong>
+          <div class="form-meta-line">37 Movements &bull; Closed Ready Stance B (Moa Junbi Sogi B)</div>
+          Pen name of scholar Yi Hwang (16th century), authority on neo-Confucianism. The 37 movements refer to his birthplace on the 37th latitude, and the diagram represents "scholar".
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#red">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Back stance outer forearm block, shifting to front stance open hand groin strike</li>
+              <li>Step, low X-block in a front stance, pull back twin high punch</li>
+              <li>Step back, high right back fist and low left down block in a back stance</li>
+              <li>Knife hand guarding block in a back stance, pointing right knife hand, balance front leg front kick, pull back right hand and left hand spear finger</li>
+              <li>Low knife hand sudo block (both sides)</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking &amp; Defenses</h3>
+              <a href="kicking-routines/index.html#red">Full Details &rarr;</a>
+            </div>
+            <div class="sub-heading">Kicking Routine</div>
+            <ol class="topic-list">
+              <li>Hook kick, round kick, spin heel kick (same leg lead into opposite leg spin)</li>
+              <li>Front leg roundhouse kick, tornado kick</li>
+              <li>360 jump side kick</li>
+            </ol>
+            <div class="sub-heading">Kicking Defenses (<a href="kicking-routines/index.html#red-defenses" style="color:var(--accent);text-decoration:none;">link</a>)</div>
+            <ol class="topic-list">
+              <li><strong>Against Front Kick:</strong> Downward X-block, twist leg, back leg round kick.</li>
+              <li><strong>Against Side Kick:</strong> Open hand push block to knee/shin, jump spin side kick.</li>
+              <li><strong>Against Roundhouse Kick:</strong> Open hand brush block, tornado kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#red">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Inner Block - Back Fist - Spin Back Fist - Spin Hook Kick.</li>
+              <li>Rising Block - Groin Attack - Shift Eye Attack.</li>
+              <li><strong>"Coffee Grinder":</strong> Spin Sweep (School mnemonic).</li>
+              <li>Push Block - Jump Spin Side Kick.</li>
+              <li>Brush Block - Tornado Kick - Spin Hook Kick.</li>
+              <li><strong>"Ham Sandwich":</strong> Bust Elbow - Elbow to Ribs - Spin Around and Take Down.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BROWN BELT -->
+    <section class="belt-curriculum-card" id="brown" data-belt="brown">
+      <div class="belt-banner" style="background-color: #fffbeb;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#92400e; border:1px solid #78350f;"></span>
+          <h2>Brown Belt</h2>
+        </div>
+        <a href="forms/08-hwa-rang.html" class="belt-form-link">Form #8: Hwa-Rang (29 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/08-hwa-rang.html">Form #8: Hwa-Rang (화랑)</a></strong>
+          <div class="form-meta-line">29 Movements &bull; Closed Ready Stance C (Moa Junbi Sogi C)</div>
+          Named after the Hwa-Rang youth group originating in the Silla Dynasty (~1,350 years ago), which became the driving force for the unification of the three kingdoms of Korea.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#brown">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Back stance twin forearm block, pull left fist to ear and inner forearm block while pulling right fist to chest</li>
+              <li>Back stance inner forearm block, switch to front stance and inner forearm block with opposite hand</li>
+              <li>Lead hand jab, reverse punch, jump spin back fist</li>
+              <li>Twin inverted knife hand strike to neck, twin low knife hand block in front stance, step forward into back stance and knife hand strike</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking, Defenses &amp; Breaking</h3>
+              <a href="kicking-routines/index.html#brown">Full Details &rarr;</a>
+            </div>
+            <div class="sub-heading">Kicking Routine</div>
+            <ol class="topic-list">
+              <li>Hook kick, round kick, jump spin crescent kick</li>
+              <li>Front leg roundhouse kick, jump spin side kick</li>
+              <li>360 jump crescent kick</li>
+            </ol>
+            <div class="sub-heading">Kicking Defenses (<a href="kicking-routines/index.html#brown-defenses" style="color:var(--accent);text-decoration:none;">link</a>)</div>
+            <ol class="topic-list">
+              <li><strong>Against Hook Kick:</strong> Duck under kick, step in with double punch.</li>
+              <li><strong>Against Spin Heel Kick:</strong> Evade backward, counter with jump spin side kick.</li>
+              <li><strong>Against Axe Kick:</strong> Side step evade, grab opponent's leg and leg sweep takedown.</li>
+            </ol>
+            <div class="sub-heading">Breaking (<a href="kicking-routines/index.html#breaking" style="color:var(--accent);text-decoration:none;">link</a>)</div>
+            <ul class="topic-list">
+              <li>Palm-heel strike through one brick.</li>
+            </ul>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#brown">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Double side kick, spin double side kick (both sides).</li>
+              <li>Hand open by ear, step back push block (back stance), jump spin heel kick (both sides).</li>
+              <li>Hand open by ear, step back push block (back stance), spin side kick low, same leg round kick high (both sides).</li>
+              <li>Outside-in crescent kick, spin heel kick, round kick (both sides).</li>
+              <li>Drop down on left knee, hands on floor, right leg round kick to body, same leg behind forward leg, jump up, spin left leg to mid-section, takedown, right ridge hand.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#brown">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Double Lapel Push:</strong> Redirect with circular palm deflection, grab wrists, execute double elbow strike.</li>
+              <li><strong>Ground Guard Defenses:</strong> Trap attacker's arm, bridge and roll (Upa) into mount position.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BROWN BELT BLACK STRIPE -->
+    <section class="belt-curriculum-card" id="brown-black" data-belt="brown-black">
+      <div class="belt-banner" style="background-color: #f1f5f9;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%); border:1px solid #0f172a;"></span>
+          <h2>Brown Belt Black Stripe</h2>
+        </div>
+        <a href="forms/09-choong-moo.html" class="belt-form-link">Form #9: Choong-Moo (30 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/09-choong-moo.html">Form #9: Choong-Moo (충무)</a></strong>
+          <div class="form-meta-line">30 Movements &bull; Parallel Ready Stance</div>
+          Name given to great Admiral Yi Soon-Sin of the Lee Dynasty (1592 A.D. inventor of the Turtle Ship). Ends with a left hand attack symbolizing his regrettable death without chance to show his unrestrained potential.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Twin knife hand guarding block, step forward inverted chop at neck level while other hand is over forehead</li>
+              <li>Back stance low block, fold hands by ear, grab neck and knee</li>
+              <li>Twin stick block, jump spin knife hand guarding block</li>
+              <li>Augmented block in front stance, pivot on left foot, move to horse riding stance and right inside block, back fist with right hand</li>
+              <li>Stepping forward double palm strike</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking &amp; Breaking</h3>
+              <a href="kicking-routines/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <div class="sub-heading">Kicking Routine</div>
+            <ol class="topic-list">
+              <li>360 push knee up round</li>
+              <li>Hip buster jump hook</li>
+              <li>Front kick then jump round</li>
+              <li>Inside-out, outside-in</li>
+            </ol>
+            <div class="sub-heading">Breaking (<a href="kicking-routines/index.html#breaking" style="color:var(--accent);text-decoration:none;">link</a>)</div>
+            <ul class="topic-list">
+              <li>360-degree side kick through two boards; punch through two boards.</li>
+            </ul>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>One-Step Sparring</h3>
+              <a href="one-steps/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Front kick low, round kick high, opposite leg for each, kick simultaneously (both sides).</li>
+              <li>Inside-out crescent kick, opposite leg outside-in crescent kick, double punch (both sides).</li>
+              <li>Jump up hook kick.</li>
+              <li>Hand up in X-block (right hand on top), left foot step out, right leg side kick, armpit, then knee, behind knee for takedown.</li>
+              <li>Hands held behind head (knife hands), step back to back stance, knife hand guarding block low, 360 degree side kick.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Grab Defenses</h3>
+              <a href="grab-defenses/index.html#brown-black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Knife block, grab wrist, slide leg to sweep and push.</li>
+              <li>Knife block breaking.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Weapons Form</h3>
+              <a href="advanced-forms/index.html" style="color:var(--accent);">Advanced Forms &rarr;</a>
+            </div>
+            <ul class="topic-list">
+              <li>Student-created 20-30 movement form using nunchaku, sword, or staff (Notes P0399-P0402).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HALF BROWN / HALF BLACK -->
+    <section class="belt-curriculum-card" id="half-brown-black" data-belt="half-brown-black">
+      <div class="belt-banner" style="background: linear-gradient(90deg, #fffbeb 0%, #f1f5f9 100%);">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background:linear-gradient(90deg,#92400e 50%,#0f172a 50%); border:1px solid #0f172a;"></span>
+          <h2>Half Brown / Half Black</h2>
+        </div>
+        <a href="forms/10-kwang-gae.html" class="belt-form-link">Form #10: Kwang-Gae (39 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/10-kwang-gae.html">Form #10: Kwang-Gae (광개)</a></strong>
+          <div class="form-meta-line">39 Movements &bull; Parallel Stance with Heaven Hand (Hanulson) &bull; Chang-Hon Tul</div>
+          Named after Gwanggaeto the Great, 19th King of the Goguryeo Dynasty (391 AD). The diagram 土 (Earth) represents the expansion and recovery of lost territory. Main focus at this rank is mastering this form.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Carry-Over Requirements (From Brown-Black)</h3>
+              <a href="#brown-black" onclick="document.querySelector('[data-belt=brown-black]').click();return false;">View Brown-Black &rarr;</a>
+            </div>
+            <ul class="topic-list">
+              <li><strong>Hand &amp; Blocking:</strong> Same as Brown Belt Black Stripe (<a href="blocking-routines/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
+              <li><strong>Kicking:</strong> Same 4 routines as Brown Belt Black Stripe (<a href="kicking-routines/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
+              <li><strong>One-Step Sparring:</strong> Same as Brown Belt Black Stripe (<a href="one-steps/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
+              <li><strong>Grab Defenses:</strong> Same as Brown Belt Black Stripe (<a href="grab-defenses/index.html#brown-black" style="color:var(--accent);text-decoration:none;">link</a>)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLACK BELT -->
+    <section class="belt-curriculum-card" id="black" data-belt="black">
+      <div class="belt-banner" style="background-color: #0f172a; color: #ffffff;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#0f172a; border:1px solid #38bdf8;"></span>
+          <h2>Black Belt</h2>
+        </div>
+        <a href="forms/11-koryo.html" class="belt-form-link">Form #11: Koryo Poomsae (30 Poom) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/11-koryo.html">Form #11: Koryo Poomsae (고려 품새)</a></strong> &bull; <a href="advanced-forms/index.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Peong-Hwa (66 Movements)</a>
+          <div class="form-meta-line">Koryo: 30 Poom &bull; Tongmilgi Ready Posture &bull; Kukkiwon Yudanja</div>
+          Koryo represents the seonbae (learned scholar of upright martial spirit) through Goguryeo, Balhae, and Goryeo. Floor pattern traces the Chinese character 士 (scholar). Peong-Hwa (66 movements, Notes P0464-P0466) and school weapons forms ("Bow form: WonHyo 1" P0456, "Sword form: WonHyo 2" P0458) are also listed under Black Belt.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hand &amp; Blocking</h3>
+              <a href="blocking-routines/index.html#black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Low block (open hand), throat strike, back leg front kick</li>
+              <li>Knife hand guarding block, shift to front stance and punch, shift to back stance and inner forearm block</li>
+              <li>Low groin strike, twin forearm block in front stance</li>
+              <li>Knife hand guarding block (back stance), hook punch into hand, step into side kick</li>
+              <li>Low block (open hand), inverted knife hand strike</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Kicking &amp; Breaking</h3>
+              <a href="kicking-routines/index.html#black">Full Details &rarr;</a>
+            </div>
+            <div class="sub-heading">Kicking Progressions</div>
+            <ol class="topic-list">
+              <li>Side kick, round kick, spin heel kick</li>
+              <li>Inside-out crescent, outside-in crescent, jump spin side kick</li>
+              <li>Front leg hook kick, round kick, jump 360 side kick</li>
+            </ol>
+            <div class="sub-heading">Breaking (<a href="kicking-routines/index.html#breaking" style="color:var(--accent);text-decoration:none;">link</a>)</div>
+            <ul class="topic-list">
+              <li>Hammer-fist through one brick.</li>
+            </ul>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Three-Step Sparring (P0449-P0453)</h3>
+              <a href="one-steps/index.html#black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li>Punch 1: inner forearm back fist. Punch 2: low push block. Punch 3: circle block ridge hand.</li>
+              <li>Punch 1: open hand brush block. Punch 2: open hand brush block. Punch 3: jump spin side kick.</li>
+              <li>Punch 1: rising block punch. Punch 2: rising block kick to the groin. Punch 3: grab fist with both hands, twist and break arm over shoulder.</li>
+              <li>Punch 1: push block punch. Punch 2: push block punch. Punch 3: push block move behind opponent and sleeper hold or snap neck.</li>
+            </ol>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>Hapkido Defenses (P0444-P0447)</h3>
+              <a href="grab-defenses/index.html#black">Full Details &rarr;</a>
+            </div>
+            <ol class="topic-list">
+              <li><strong>Leg Bar / Achilles Lock:</strong> Defense against inside knee / ankle kick attack.</li>
+              <li><strong>Shoulder Throw:</strong> Defense against two-hand front choke.</li>
+              <li><strong>Arm Lock:</strong> Defense against committed cross punch.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1ST DAN BLACK BELT -->
+    <section class="belt-curriculum-card" id="1st-dan" data-belt="1st-dan">
+      <div class="belt-banner" style="background-color: #0f172a; color: #ffffff;">
+        <div class="belt-banner-title">
+          <span class="belt-swatch" style="background-color:#0f172a; border:1px solid #38bdf8;"></span>
+          <h2>1st Dan Black Belt</h2>
+        </div>
+        <a href="forms/10-kwang-gae.html" class="belt-form-link">Form #10: Kwang-Gae (39 Movements) &rarr;</a>
+      </div>
+      <div class="belt-body">
+        <div class="form-summary-box">
+          <strong><a href="forms/10-kwang-gae.html">Form #10: Kwang-Gae (광개)</a></strong> &bull; <a href="advanced-forms/index.html" style="color:var(--accent); font-weight:600; text-decoration:none;">Po-Eun (36) &amp; Ge-Baek (44)</a>
+          <div class="form-meta-line">Kwang-Gae: 39 Movements &bull; Parallel Stance with Heaven Hand (Hanulson) &bull; Chang-Hon Tul</div>
+          Named after Gwanggaeto the Great, 19th King of the Goguryeo Dynasty (391 AD). The diagram 土 (Earth) represents the expansion and recovery of lost territory. Po-Eun (P0514) and Ge-Baek (P0515) complete the 1st Dan Chang-Hon triad.
+        </div>
+        <div class="topic-columns">
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>1st Dan Breaking (P0489-P0493)</h3>
+              <a href="kicking-routines/index.html#breaking">Full Details &rarr;</a>
+            </div>
+            <ul class="topic-list">
+              <li>Elbow through one brick</li>
+              <li>Split front kick through two boards</li>
+              <li>Jump sidekick / 360</li>
+              <li>Jump scissors kick</li>
+            </ul>
+          </div>
+          <div class="topic-box">
+            <div class="topic-box-header">
+              <h3>1st Dan One-Step Takedowns &amp; Positional Defenses (P0470-P0511)</h3>
+              <a href="one-steps/index.html#1st-dan">Full Details &rarr;</a>
+            </div>
+            <ul class="topic-list">
+              <li><strong>Takedown 1:</strong> Step forward and rising block, bring reverse hand under attacking hand and grab opponent's wrist bending the arm to submission, take rear leg and leg sweep.</li>
+              <li><strong>Takedown 2:</strong> Step forward elbow block and ridge hand, drop rear knee and sweep front leg with rear hand.</li>
+              <li><strong>Prone Position Defenses (Ref. &lt;698&gt;):</strong> Front Choke, Rear Choke, Heel Stomp Attack.</li>
+              <li><strong>Kneeling Position Defenses (Ref. &lt;708&gt;):</strong> Spear-finger/Punch, Downward Knife-hand.</li>
+              <li><strong>Chair Defenses (Ref. &lt;699&gt;):</strong> Lunging punch, elbow choke, rear choke, rear armbar.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>UMA Taekwondo Notes</p>
   </footer>
+
+  <script>
+    (function() {
+      const pills = document.querySelectorAll('#beltFilterBar .belt-pill');
+      const cards = document.querySelectorAll('.belt-curriculum-card');
+
+      function selectBelt(belt, updateHash) {
+        pills.forEach(p => {
+          p.classList.toggle('active', p.getAttribute('data-belt') === belt);
+        });
+        cards.forEach(c => {
+          if (belt === 'all' || c.getAttribute('data-belt') === belt) {
+            c.classList.remove('hidden');
+          } else {
+            c.classList.add('hidden');
+          }
+        });
+        if (updateHash) {
+          if (belt === 'all') {
+            history.replaceState(null, '', window.location.pathname);
+          } else {
+            history.replaceState(null, '', '#' + belt);
+          }
+        }
+      }
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          selectBelt(pill.getAttribute('data-belt'), true);
+        });
+      });
+
+      const initialHash = window.location.hash.replace('#', '');
+      if (initialHash) {
+        const match = Array.from(pills).find(p => p.getAttribute('data-belt') === initialHash);
+        if (match) {
+          selectBelt(initialHash, false);
+        }
+      }
+    })();
+  </script>
 
 </body>
 </html>
